@@ -1,1 +1,5 @@
 export { default as useLocalStorage } from './useLocalStorage.js'
+export { useWindowResize } from './useWindowResize.js'
+export { useStorage } from './useStorage.js'
+export { useNetworkStatus } from './useNetworkStatus.js'
+export { useOnClickOutside } from './useOnClickOutside.js'
