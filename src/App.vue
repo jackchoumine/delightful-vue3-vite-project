@@ -1,25 +1,16 @@
+<!--
+ * @Date        : 2022-08-08 14:23:25
+ * @Author      : ZhouQijun
+ * @LastEditors : ZhouQijun
+ * @LastEditTime: 2022-10-14 16:37:10
+ * @Description : 
+-->
 <script setup lang="ts">
-  // This starter template is using Vue 3 <script setup> SFCs
-  // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-  import HelloWorld from '@c/HelloWorld.vue'
   import { FileViewer } from '@c/FileViewer'
 </script>
 
 <template>
   <FileViewer />
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
-  }
-</style>
+<style scoped></style>
