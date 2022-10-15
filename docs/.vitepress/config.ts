@@ -2,7 +2,7 @@
  * @Description : vitepress 配置
  * @Date        : 2022-10-16 02:33:56 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-10-16 04:32:16 +0800
+ * @LastEditTime: 2022-10-16 05:48:39 +0800
  * @LastEditors : JackChou
  */
 export default {
@@ -12,8 +12,8 @@ export default {
   markdown: {
     lineNumbers: true, // 代码块显示行号
     toc: {
-      includeLevel: [1, 2, 3, 4] //生成目录的 markdown 标题 默认 2 3
-    }
+      includeLevel: [1, 2, 3, 4], //生成目录的 markdown 标题 默认 2 3
+    },
   },
   themeConfig: {
     // setTitle: 'hello',
@@ -39,12 +39,12 @@ export default {
           {
             items: [
               { text: 'js', link: '/web/js/' },
-              { text: 'css', link: '/web/css/' }
+              { text: 'css', link: '/web/css/' },
               // { text: 'html', link: '/web/html/' }
-            ]
+            ],
           },
-          { items: [{ text: 'webpack', link: '/webpack/' }] }
-        ]
+          { items: [{ text: 'webpack', link: '/webpack/' }] },
+        ],
       },
       {
         text: '其他',
@@ -53,9 +53,9 @@ export default {
           { text: '函数式编程', link: '/others/functional-programming/' },
           { text: 'angular', link: '/angular/' },
           { text: '开发工具', link: '/others/dev-tool/' },
-          { text: 'mac使用', link: '/others/mac/' }
-        ]
-      }
+          { text: 'mac使用', link: '/others/mac/' },
+        ],
+      },
       // { text: '面试', link: '/interview/' },
     ],
     // 博客仓库配置
@@ -68,10 +68,10 @@ export default {
     // 内置搜索智能搜索 h2 h3 标题
     algolia: {
       apiKey: 'b7968a5518faded4fab25c0e7e60813a',
-      indexName: 'jackBlog'
+      indexName: 'jackBlog',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://gitee.com/geeksdidi' }
+      { icon: 'github', link: 'https://github.com/jackchoumine' },
       // { icon: 'twitter', link: '...' },
       // // You can also add custom icons by passing SVG as string:
       // {
@@ -80,7 +80,7 @@ export default {
       //   },
       //   link: '...'
       // }
-    ]
+    ],
   },
   plugins: [
     ['@mr-hope/copy-code'],
@@ -102,11 +102,11 @@ export default {
           // GitHub repository 所有者，可以是个人或者组织。
           owner: 'jackchoumine',
           // 设置语言(default: zh-CN)
-          language: 'zh-CN'
-        }
-      }
-    ]
-  ]
+          language: 'zh-CN',
+        },
+      },
+    ],
+  ],
   // base: '/blog/',
   // 构建输出目录
   // dest: './dist', // 默认 .vuepress/dist
