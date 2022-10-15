@@ -2,13 +2,13 @@
  * @Description : vitepress 配置
  * @Date        : 2022-10-16 02:33:56 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-10-16 03:53:40 +0800
+ * @LastEditTime: 2022-10-16 04:32:16 +0800
  * @LastEditors : JackChou
  */
 export default {
   title: 'Jack 的博客',
   description: 'vue 教程', // html meta description 方便搜索引擎抓取
-  head: [['link', { rel: 'icon', href: '/logo.gif' }]],
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   markdown: {
     lineNumbers: true, // 代码块显示行号
     toc: {
@@ -106,12 +106,12 @@ export default {
         }
       }
     ]
-  ],
+  ]
   // base: '/blog/',
   // 构建输出目录
-  dest: './dist', // 默认 .vuepress/dist
+  // dest: './dist', // 默认 .vuepress/dist
   // 开发运行的端口
-  port: '7777',
+  // port: '7777',
   // 开发运行的地址
-  host: '127.0.0.1'
+  // host: '127.0.0.1'
 }
