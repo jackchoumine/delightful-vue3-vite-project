@@ -1,7 +1,6 @@
 # react 核心概念
 
-react 将 UI 分成独立可复用的组件.
-根据定义方式不同，可分为函数组件和类组件。
+react 将 UI 分成独立可复用的组件. 根据定义方式不同，可分为函数组件和类组件。
 
 **声明式**编写组件：你想要什么，直接给出结果，不需要执行详细的过程，react 就会帮你渲染出来。
 
@@ -20,7 +19,7 @@ class BookComponent extends Component {
     const bookList = ['react入门', 'react进阶', 'react专家之路']
     const Books = (
       <ol>
-        {bookList.map(book => (
+        {bookList.map((book) => (
           <li>{book}</li>
         ))}
       </ol>
@@ -31,9 +30,7 @@ class BookComponent extends Component {
 export default BookComponent
 ```
 
-::: tip react 元素和 react 组件
-react 元素是一个描述 react 组件的 JS 对象，react 组件时一个 class 或者函数。
-:::
+::: tip react 元素和 react 组件 react 元素是一个描述 react 组件的 JS 对象，react 组件时一个 class 或者函数。 :::
 
 ## 组件状态 state
 
@@ -49,7 +46,7 @@ class BookComponent extends Component {
     this.state = {
       // 定义内部状态
       like: 0,
-      dislike: 0,
+      dislike: 0
     }
   }
   vote() {
@@ -59,13 +56,13 @@ class BookComponent extends Component {
     //   vote: vote,
     // }
     this.setState({
-      like: ++like,
+      like: ++like
     })
   }
   hate() {
     let { dislike } = this.state
     this.setState({
-      dislike: ++dislike,
+      dislike: ++dislike
     })
   }
   render() {
@@ -78,7 +75,8 @@ class BookComponent extends Component {
         <button
           onClick={() => {
             this.vote()
-          }}>
+          }}
+        >
           喜欢
         </button>
         &nbsp;&nbsp;
@@ -87,7 +85,8 @@ class BookComponent extends Component {
         <button
           onClick={() => {
             this.hate()
-          }}>
+          }}
+        >
           不喜欢
         </button>
         &nbsp;&nbsp;
@@ -146,8 +145,7 @@ UI = Component(props,state), 组件可看成一个函数，输入外部的属性
 
 ③ state 的更新是一个合并的过程，只需要传入改变的 state；
 
-④ state 的所有状态都应该是**不可变对象**。 状态改变，应该重建状态对象，而不是直接修改原来的对象。对于简单数据类型（string，number，boolean，null，undefined），都是不可变对象，修改它们本质就是重置。
-数组类型的状态，使用 `concat` 和 `...` 新建一个数组，再重置状态。concat、 slice、filter 会返回一个新的数组，push、pop、shift、unshift、splice 等方法修改原数组。对象类型的状态，使用`Object.assign` 或者 `...` 修改它。
+④ state 的所有状态都应该是**不可变对象**。 状态改变，应该重建状态对象，而不是直接修改原来的对象。对于简单数据类型（string，number，boolean，null，undefined），都是不可变对象，修改它们本质就是重置。数组类型的状态，使用 `concat` 和 `...` 新建一个数组，再重置状态。concat、 slice、filter 会返回一个新的数组，push、pop、shift、unshift、splice 等方法修改原数组。对象类型的状态，使用`Object.assign` 或者 `...` 修改它。
 
 > 创建新的状态对象的关键是， 避免使用会直接修改原对象的方法， 而是使用可以返回一个新对象的方法。
 
@@ -181,9 +179,7 @@ setState 的第二个回调的执行时机：render 之后，没有参数，在�
 
 ## 事件处理
 
-react 中的是事件是合成事件，采用 on+事件名命名，不是原生 DOM 事件。行为和原生事件有点区别，阻止事件的默认行为需要显示调用 preventDefault。如果在某些场 景下必须使用 DOM 提供的原生事件，可以通过 React 事件对象的 nativeEvent 属性获取。
-事件处理器最容易出错的是 this 而绑定，因为 ES6 class 不会自动绑定 this 到当前对象。
-四种事件处理器的绑定方式：
+react 中的是事件是合成事件，采用 on+事件名命名，不是原生 DOM 事件。行为和原生事件有点区别，阻止事件的默认行为需要显示调用 preventDefault。如果在某些场 景下必须使用 DOM 提供的原生事件，可以通过 React 事件对象的 nativeEvent 属性获取。事件处理器最容易出错的是 this 而绑定，因为 ES6 class 不会自动绑定 this 到当前对象。四种事件处理器的绑定方式：
 
 ①. 箭头函数，在 render 方法中为元素事件定义事件处理函数，最大的问题是，每次 render 调用时，都会重新创建一个新的事件处理函数，带来额 外的性能开销，组件所处层级越低，这种开销就越大。当然，很多时候，不必在意这点开销。
 
@@ -195,7 +191,7 @@ react 中的是事件是合成事件，采用 on+事件名命名，不是原生 
 
 ```js
 // onClick 返回一个函数
-onClick = p => event => {
+onClick = (p) => (event) => {
   console.log(p, event)
 }
 ```
@@ -216,14 +212,13 @@ onClick = p => event => {
   处理事件</a> by JackChouMine (<a href="https://codepen.io/JackZhouMine">@JackZhouMine</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<div v-is="'script'" async src="https://static.codepen.io/assets/embed/ei.js"></div>
 
 [合成事件](https://react.docschina.org/docs/events.html)
 
 ## 无状态组件
 
-上面的 Book 组件内部有 state，组件需要维持这个状态，叫作状态组件， 图书列表 Books，没有定义 state，叫作无状态组件。
-无状态组件不关注内部状态，专注 UI 展示，还可使用函数还定义无状态组件，此时组件也叫函数组件，props 作为函数参数传入。
+上面的 Book 组件内部有 state，组件需要维持这个状态，叫作状态组件， 图书列表 Books，没有定义 state，叫作无状态组件。无状态组件不关注内部状态，专注 UI 展示，还可使用函数还定义无状态组件，此时组件也叫函数组件，props 作为函数参数传入。
 
 Book 组件维持 like 和 dislike 状态，这些属性作为书籍的属性传入更加适合，故可以把 Book 组件定义成函数组件，专注展示书籍信息，数据和事件处理函数从外部传入。
 
@@ -241,7 +236,7 @@ function Welcome(props) {
 import React from 'react'
 function BookFun(props) {
   const {
-    book: { title, author, version, bookId, dislike, like },
+    book: { title, author, version, bookId, dislike, like }
   } = props // 所有传递进来的属性会组成一个简单的对象
   const handleLike = () => {
     props.onLike(bookId)
@@ -256,10 +251,11 @@ function BookFun(props) {
       <span>{like}</span>
       <br />
       <button
-        onClick={event => {
+        onClick={(event) => {
           console.log(event) //使用箭头函数绑定事件处理器
           props.onDislike(bookId)
-        }}>
+        }}
+      >
         不喜欢
       </button>
       &nbsp;&nbsp;
@@ -286,7 +282,7 @@ class Books extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      books: [],
+      books: []
     }
     this.timer = ''
     this.handleLike = this.handleLike.bind(this) // es6 的 class，需要手动绑定 this
@@ -304,7 +300,7 @@ class Books extends Component {
             version: '第二版',
             like: 0,
             dislike: 0,
-            bookId: (Math.random() + 1).toString(36).substring(2), // 随机字符串
+            bookId: (Math.random() + 1).toString(36).substring(2) // 随机字符串
           },
           {
             title: 'react进阶',
@@ -312,7 +308,7 @@ class Books extends Component {
             version: '第三版',
             like: 0,
             dislike: 0,
-            bookId: (Math.random() + 1).toString(36).substring(2),
+            bookId: (Math.random() + 1).toString(36).substring(2)
           },
           {
             title: 'react专家之路',
@@ -320,9 +316,9 @@ class Books extends Component {
             version: '第一版',
             like: 0,
             dislike: 0,
-            bookId: (Math.random() + 1).toString(36).substring(2),
-          },
-        ],
+            bookId: (Math.random() + 1).toString(36).substring(2)
+          }
+        ]
       })
     }, 100)
   }
@@ -330,30 +326,30 @@ class Books extends Component {
     if (this.timer) clearTimeout(this.timer)
   }
   handleDislike(id) {
-    const books = this.state.books.map(book => {
+    const books = this.state.books.map((book) => {
       return book.bookId === id ? { ...book, dislike: ++book.dislike } : book
     })
     this.setState({
-      books,
+      books
     })
   }
   handleLike(id) {
-    const books = this.state.books.map(book => {
+    const books = this.state.books.map((book) => {
       return book.bookId === id ? { ...book, like: ++book.like } : book
     })
     this.setState({
-      books,
+      books
     })
   }
   render() {
     const Books = (
       <ol>
-        {this.state.books.map(book => (
+        {this.state.books.map((book) => (
           <Book
             key={book.bookId}
             book={book} // 书籍信息保存在 book 属性你
             onLike={this.handleLike}
-            onDislike={id => {
+            onDislike={(id) => {
               // 自定义事件，使用箭头函数绑定事件处理器
               this.handleDislike(id)
             }}
@@ -413,13 +409,13 @@ class BookComponent extends Component {
     const bookList = [
       { title: 'react入门', author: '小马', version: '第二版' },
       { title: 'react进阶', author: '小明', version: '第三版' },
-      { title: 'react专家之路', author: '小华', version: '第一版' },
+      { title: 'react专家之路', author: '小华', version: '第一版' }
     ]
     const Books = (
       <ol>
         {/*<Book {...book} /> 还可以这样传递 推荐分分开传递，传递的属性会更加清晰，不会传递多余的属性*/}
         {/* 所有属性会组成一个对象传递给 props */}
-        {bookList.map(book => (
+        {bookList.map((book) => (
           <Book title={book.title} author={book.author} version={book.version} />
         ))}
       </ol>
@@ -432,8 +428,7 @@ export default BookComponent
 
 ### 属性校验和默认值
 
-和 vue 一样，react 也可以可对 props 进行校验和提供默认值。react 通过`propTypes` 和 `PropTypes` 实现该功能。
-propTypes 的 key 是 props 的属性，值从 PropTypes 中获取。
+和 vue 一样，react 也可以可对 props 进行校验和提供默认值。react 通过`propTypes` 和 `PropTypes` 实现该功能。 propTypes 的 key 是 props 的属性，值从 PropTypes 中获取。
 
 给图书图书的函数组件添加 props 检查：
 
@@ -447,10 +442,10 @@ BookFun.propTypes = {
     version: PropTypes.string,
     price: PropTypes.number,
     like: PropTypes.number,
-    disLike: PropTypes.number,
+    disLike: PropTypes.number
   }).isRequired,
   onLike: PropTypes.func.isRequired,
-  onDislike: PropTypes.func.isRequired,
+  onDislike: PropTypes.func.isRequired
 }
 // TODO 如何对props的内层属性设置默认值 属性默认值
 // BookFun.defaultProps = { book.price: 39 }
@@ -473,9 +468,22 @@ PropTypes.func
 - 自定义验证元素：
 
 ```js
-customArrayProp: PropTypes.arrayOf(function (propValue, key, componentName, location, propFullName) {
+customArrayProp: PropTypes.arrayOf(function (
+  propValue,
+  key,
+  componentName,
+  location,
+  propFullName
+) {
   if (!/matchme/.test(propValue[key])) {
-    return new Error('Invalid prop `' + propFullName + '` supplied to' + ' `' + componentName + '`. Validation failed.')
+    return new Error(
+      'Invalid prop `' +
+        propFullName +
+        '` supplied to' +
+        ' `' +
+        componentName +
+        '`. Validation failed.'
+    )
   }
 })
 ```
@@ -489,9 +497,22 @@ customArrayProp: PropTypes.arrayOf(function (propValue, key, componentName, loca
 - 自定义验证：
 
 ```js
-customArrayProp: PropTypes.objectOf(function (propValue, key, componentName, location, propFullName) {
+customArrayProp: PropTypes.objectOf(function (
+  propValue,
+  key,
+  componentName,
+  location,
+  propFullName
+) {
   if (!/matchme/.test(propValue[key])) {
-    return new Error('Invalid prop `' + propFullName + '` supplied to' + ' `' + componentName + '`. Validation failed.')
+    return new Error(
+      'Invalid prop `' +
+        propFullName +
+        '` supplied to' +
+        ' `' +
+        componentName +
+        '`. Validation failed.'
+    )
   }
 })
 ```
@@ -529,20 +550,15 @@ vue 通过插槽 `slot` 来传递 html 或者组件，react 通过 `children` �
 
 给组件添加样式的方式有两种：外部样式和内联样式
 
-①. 外部样式引入的两种方式
-在使用组件的 html 也页面中引入：
+①. 外部样式引入的两种方式在使用组件的 html 也页面中引入：
 
 ```html
 <link rel="stylesheet" type="text/css" href="style.css" />
 ```
 
-样式表文件作用于整个应用的所 有组件(一般是基础样式表)。
-把组件当成一个模块引入组件，样式 表作用于某个组件。在应用入口引入的样式也会作用于整个应用。
-解决 class 冲突————使用 CSS Modules。
+样式表文件作用于整个应用的所 有组件(一般是基础样式表)。把组件当成一个模块引入组件，样式 表作用于某个组件。在应用入口引入的样式也会作用于整个应用。解决 class 冲突————使用 CSS Modules。
 
-②. 内联样式
-将样式属性写成 JS 对象，使用 style 属性引入。
-**具有中划线的样式属性，要采用小驼峰名名。**
+②. 内联样式将样式属性写成 JS 对象，使用 style 属性引入。 **具有中划线的样式属性，要采用小驼峰名名。**
 
 <!-- 如何防止样式冲突 -->
 
@@ -731,7 +747,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
   createRef函数</a> by JackChouMine (<a href="https://codepen.io/JackZhouMine">@JackZhouMine</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<div v-is="'script'" async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></div>
 
 ### 回调形式的 ref
 
@@ -775,7 +791,7 @@ class App extends React.Component {
 通过 props 传递 ref:
 
 ```js
-const MyButton2 = props => {
+const MyButton2 = (props) => {
   return (
     <div>
       <button ref={props._ref}>按钮</button>
@@ -785,7 +801,7 @@ const MyButton2 = props => {
 // 使用
 
 ;<MyButton2
-  _ref={com => {
+  _ref={(com) => {
     this.myButton2 = com
   }}
 />
@@ -804,7 +820,7 @@ console.log(this.myButton2)
 ```js
 const MyInput = React.forwardRef((props, ref) => {
   console.log(props)
-  return <input type='text' ref={ref} placeholder='点击聚焦' value={props.value} />
+  return <input type="text" ref={ref} placeholder="点击聚焦" value={props.value} />
 })
 // 使用 MyInput 时，绑定 ref , 就能拿到 input DOM
 ```
@@ -841,11 +857,9 @@ demo:
   ref回调函数</a> by JackChouMine (<a href="https://codepen.io/JackZhouMine">@JackZhouMine</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<div v-is="'script'" async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></div>
 
-:::tip 函数式组件的 ref
-函数式组件没有`this`，只能通过 forwardRef 设置 ref。
-:::
+:::tip 函数式组件的 ref 函数式组件没有`this`，只能通过 forwardRef 设置 ref。 :::
 
 ### 字符形式 ref
 
@@ -865,8 +879,7 @@ demo:
 
 1. 性能不好，ref 会被 react 处理成闭包；
 2. 不好跟踪 this;
-3. 处理循环不方便。
-   :::
+3. 处理循环不方便。 :::
 
 ### 循环中的 ref
 
@@ -949,11 +962,9 @@ export const Component = ({ items }) => {
 
 后面的 ref 优先。
 
-::: tip 能不用则不用 ref
-因为和 react 声明式的理念相违背和导致滥用，尽量使用通过**声明式**实现来完成的事情。
+::: tip 能不用则不用 ref 因为和 react 声明式的理念相违背和导致滥用，尽量使用通过**声明式**实现来完成的事情。
 
-比如，避免在 Dialog 组件里暴露 open() 和 close() 方法，最好传递 isOpen 属性
-:::
+比如，避免在 Dialog 组件里暴露 open() 和 close() 方法，最好传递 isOpen 属性 :::
 
 ### 哪些场景可使用 ref
 
@@ -989,7 +1000,7 @@ this.context.onAddUser(this.state.newUser)
 
 // 声明 context 的类型
 Child.contextTypes = {
-  onAddUser: PropTypes.func,
+  onAddUser: PropTypes.func
 }
 ```
 
@@ -1003,16 +1014,19 @@ Child.contextTypes = {
 
 表单元素的值是由 React 来管理的，那么它就是一个受控组件，否则就是非受控组件。React 组件渲染表单元素，并在用户和表单元素发生交互时控制表单元素的行为，从而保证组件的 state 成为界面上所有元素状态的**唯一来源**。
 
-input 和 textarea 的非受控组件，state 的状态赋值给 value，通过监听 change 事件，来改变 state。
-select 在 select 上设置 value 属性，checkbox 通过修改 checked 属性。
+input 和 textarea 的非受控组件，state 的状态赋值给 value，通过监听 change 事件，来改变 state。 select 在 select 上设置 value 属性，checkbox 通过修改 checked 属性。
 
 非受控组件指表单元素的状态依然由**表单元素**自己管理，而不是交给 React 组件管理。属性 ref，用来引用 React 组件或 DOM 元素的实例来获取表单上的值。
 
-使用 `this.nameInput.value` 获取表单值，默认值使用 defaultValue 属性设置。
-select 元素和 textarea 元素也支持通过 defaultValue 设置默认值，`<input type="checkbox"> `和 `<input type="radio">` 则支持通过 defaultChecked 属性设置默认值。
+使用 `this.nameInput.value` 获取表单值，默认值使用 defaultValue 属性设置。 select 元素和 textarea 元素也支持通过 defaultValue 设置默认值，`<input type="checkbox"> `和 `<input type="radio">` 则支持通过 defaultChecked 属性设置默认值。
 
 ```js
-<input type='text' name='name' defaultValue='hello' ref={nameInput => (this.nameInput = nameInput)} />
+<input
+  type="text"
+  name="name"
+  defaultValue="hello"
+  ref={(nameInput) => (this.nameInput = nameInput)}
+/>
 ```
 
 ### 小结
@@ -1115,8 +1129,7 @@ class Button extends React.Component{
 
 3. 尽量使用函数式组件
 
-函数式组件不能使用生命周期，因为生命周期式声明式，更可能带来副作用。
-同时函数式组件性能更加好。
+函数式组件不能使用生命周期，因为生命周期式声明式，更可能带来副作用。同时函数式组件性能更加好。
 
 ### 参考
 

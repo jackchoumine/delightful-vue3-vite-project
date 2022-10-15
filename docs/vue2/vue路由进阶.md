@@ -28,7 +28,9 @@
 <!--路径跳转-->
 <router-link to="/argu/123/book">path跳转</router-link>
 <!--路由名跳转-->
-<router-link :to="{name:'argu',params:{id:'test'}}" tag="button">name+params跳转</router-link>
+<router-link :to="{name:'argu',params:{id:'test'}}" tag="button"
+  >name+params跳转</router-link
+>
 <!--获取参数-->
 <h1>{{$route.params.id}}</h1>
 <!--params的名字路径中的的参数名一致-->
@@ -198,7 +200,7 @@ props: {
   route 的 params 传递参数</a> by JackChouMine (<a href="https://codepen.io/JackZhouMine">@JackZhouMine</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<div v-is="'script'" async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></div>
 
 ## HTML5 History 模式
 
@@ -285,14 +287,11 @@ router.afterEach((to, form) => {
 })
 ```
 
-3. 路由独享守卫
-   只在匹配某个路由时执行。
+3. 路由独享守卫只在匹配某个路由时执行。
 
 4. 组件内守卫
 
-`beforeRouteEnter`, 组件创建之前调用，组件不具备`this`；
-`beforeRouteUpdate`，路由更新，而组件被复用时调用，可使用`this`；
-`beforeRouteLeave`，离开路由时调用，可使用`this`。
+`beforeRouteEnter`, 组件创建之前调用，组件不具备`this`； `beforeRouteUpdate`，路由更新，而组件被复用时调用，可使用`this`； `beforeRouteLeave`，离开路由时调用，可使用`this`。
 
 ```js
 export default {
@@ -310,7 +309,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     console.log('①，home 组件内路由守卫，beforeRouteEnter')
     // next 晚于 mounted 执行，next 之前的代码，早于beforeCreate 执行
-    next(vm => {
+    next((vm) => {
       console.log('vm')
       console.log(vm) //有值
       console.log('this')
@@ -392,8 +391,7 @@ export default {
 
 ## 过渡效果
 
-可以给路由匹配的组件设置过渡效果，让页面平滑地显示，提升用户体验。
-需要用到 `transition` 标签，如果有多个视图需要过渡，则用 `transition-group`。
+可以给路由匹配的组件设置过渡效果，让页面平滑地显示，提升用户体验。需要用到 `transition` 标签，如果有多个视图需要过渡，则用 `transition-group`。
 
 ```html
 <transition-group name="router-view">

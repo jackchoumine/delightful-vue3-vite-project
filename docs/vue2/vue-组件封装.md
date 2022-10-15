@@ -281,7 +281,7 @@ inheritAttrs: false 和 \$attrs 结合使用：
   $attrs使用</a> by JackZhouMine (<a href="https://codepen.io/JackZhouMine">@JackZhouMine</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<div v-is="'script'" async src="https://static.codepen.io/assets/embed/ei.js"></div>
 
 #### data vs props
 

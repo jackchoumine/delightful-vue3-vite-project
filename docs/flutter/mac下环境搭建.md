@@ -79,7 +79,7 @@ flutter doctor --android-licenses
 
 ## 检查环境是否就绪
 
-```bahs
+```bash
 flutter doctor
 ```
 
@@ -89,4 +89,4 @@ flutter doctor
 
 1. [How to install Flutter on macOS using homebrew and asdf](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
 
-2. []()
+<!-- 2. []() -->
