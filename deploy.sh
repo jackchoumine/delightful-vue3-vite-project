@@ -3,6 +3,8 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+rm -rf dist
+
 # 生成静态文件
 npm run docs:build
 
@@ -28,5 +30,3 @@ git push -f git@gitee.com:jackzhoumine/jackchoumine.git master
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 # git push -f git@github.com:jackchoumine/blog.git master:gh-pages
 cd -
-
-rm -rf dist
