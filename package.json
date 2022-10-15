@@ -4,9 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
     "vue": "^3.2.37"
@@ -16,6 +19,7 @@
     "typescript": "^4.6.4",
     "unplugin-auto-import": "^0.11.2",
     "vite": "^3.0.0",
+    "vitepress": "~1.0.0-alpha.20",
     "vue-tsc": "^0.38.4"
   }
 }
