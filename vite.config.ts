@@ -1,8 +1,8 @@
 /*
  * @Date        : 2022-08-08 15:54:09
  * @Author      : ZhouQijun
- * @LastEditors : JackChou
- * @LastEditTime: 2022-10-16 05:14:52 +0800
+ * @LastEditors : ZhouQijun
+ * @LastEditTime: 2022-10-18 13:01:27
  * @Description : vite 配置
  */
 // @ts-nocheck
@@ -11,10 +11,18 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 
+const isCustomElement = tag => /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: isCustomElement,
+        },
+      },
+    }),
     AutoImport({
       imports: ['vue'], //, 'vue-router']
     }),
