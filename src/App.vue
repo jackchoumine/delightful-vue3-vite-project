@@ -1,8 +1,8 @@
 <!--
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
- * @LastEditors : ZhouQijun
- * @LastEditTime: 2022-10-18 12:39:18
+ * @LastEditors : JackChou
+ * @LastEditTime: 2022-10-18 23:23:09 +0800
  * @Description : 
 -->
 <script setup>
@@ -20,6 +20,10 @@
   function updated({ detail }) {
     console.log(detail)
   }
+  const person = reactive({ name: 'jack' })
+  function changePerson(params) {
+    person.name = 'HELLO_WORLD'
+  }
 </script>
 
 <template>
@@ -31,6 +35,8 @@
       <span slot="left">工资：</span>
       <span slot="right">$</span>
     </count-to>
+    <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
+    <button type="button" @click="changePerson">修改person</button>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 /*
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
- * @LastEditors : ZhouQijun
- * @LastEditTime: 2022-10-18 15:48:10
+ * @LastEditors : JackChou
+ * @LastEditTime: 2022-10-19 00:17:04 +0800
  * @Description :
  */
 import { createApp } from 'vue'
@@ -15,8 +15,10 @@ import { vAuth, vClickOutside } from './plugins'
 // import './assets/styles/style.css'
 
 import 'jack-web-ui/dist/jack-web-ui/jack-web-ui.css'
-import { CountTo } from 'jack-web-ui'
-customElements.define('count-to', CountTo as unknown as CustomElementConstructor)
+// @ts-ignore
+import { MyRating } from 'jack-web-ui'
+// customElements.define('count-to', CountTo as unknown as CustomElementConstructor)
+customElements.define('my-rating', MyRating as unknown as CustomElementConstructor)
 
 const app = createApp(App)
 
