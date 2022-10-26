@@ -2,7 +2,7 @@
  * @Description : 使用 Button
  * @Date        : 2022-10-27 00:40:00 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-10-27 01:01:08 +0800
+ * @LastEditTime: 2022-10-27 01:13:30 +0800
  * @LastEditors : JackChou
  */
 import Button from './Button'
@@ -24,9 +24,13 @@ const UseButton = defineComponent({
         default: () => <span style={{ color: 'red' }}>hello</span>,
       })
     }
+    // NOTE 第一种方式
+    return () => <Button v-slots={children}></Button>
 
-    return () => <Button>{children}</Button>
-    // NOTE 另外一种写法
+    // NOTE 第二种方式
+    // return () => <Button>{children}</Button>
+
+    // NOTE 第三种方式
     // return () => (
     //   <Button>
     //     {left ? left() : null}
@@ -34,6 +38,9 @@ const UseButton = defineComponent({
     //     {right ? right() : null}
     //   </Button>
     // )
+
+    // NOTE 哪种写法更好？
+    // v-slots 不是官方支持的用法，推荐使用第二种方式。
   },
 })
 
