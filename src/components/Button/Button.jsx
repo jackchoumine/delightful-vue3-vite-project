@@ -2,12 +2,12 @@
  * @Description : Button 组件，用于测试在jsx 中使用插槽
  * @Date        : 2022-10-27 00:22:59 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-10-27 00:38:26 +0800
+ * @LastEditTime: 2022-10-27 00:49:54 +0800
  * @LastEditors : JackChou
  */
 
 const style = {
-  width: '120px',
+  width: '200px',
   height: '37px',
 }
 const Button = defineComponent({
