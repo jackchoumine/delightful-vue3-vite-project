@@ -2,7 +2,7 @@
  * @Date        : 2022-10-17 09:27:13
  * @Author      : ZhouQiJun
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2022-11-02 14:37:41
+ * @LastEditTime: 2022-11-02 14:57:55
  * @Description : 
 -->
 <script>
@@ -52,12 +52,21 @@
 </script>
 
 <template>
-  <div>
+  <div class="hello-world">
     <input v-focus />
-    <button v-auth:disabled="'li'">无权限禁用</button>
+    <button v-auth:disabled="'li'" class="button">无权限禁用</button>
     <button v-auth="'li'">无权限删除</button>
     <button @click="openModal">Open Modal</button>
     <br />
     <Modal :isOpen="modalIsOpen" @close-modal="onModalClose">My Modal !!!!</Modal>
   </div>
 </template>
+
+<style>
+  .hello-world {
+    background-color: aliceblue;
+  }
+  .hello-world .button {
+    color: red;
+  }
+</style>
