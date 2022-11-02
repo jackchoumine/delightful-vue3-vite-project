@@ -59,6 +59,13 @@ setup() {
 
 > 按需自动导入报错。
 
+解决：手动导入
+
+```js
+import { ElLoading } from 'element-plus'
+app.use(ElLoading)
+```
+
 ## 插槽
 
 从 setup 函数的第二参数解构出 slots

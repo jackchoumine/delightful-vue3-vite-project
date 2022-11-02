@@ -2,7 +2,7 @@
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2022-11-02 15:36:50
+ * @LastEditTime: 2022-11-02 15:55:29
  * @Description :
  */
 import { createApp } from 'vue'
@@ -26,6 +26,8 @@ app.use(vAuth).use(vClickOutside)
 // web component
 // app.config.compilerOptions.isCustomElement = tag =>
 //   /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
+import { ElLoading } from 'element-plus'
+app.use(ElLoading)
 // import 'element-plus/dist/index.css'
 // import ElementPlus from 'element-plus'
 // import('element-plus').then(({ default: ElementPlus }) => {
