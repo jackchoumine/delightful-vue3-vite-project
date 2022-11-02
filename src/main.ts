@@ -1,8 +1,8 @@
 /*
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
- * @LastEditors : JackChou
- * @LastEditTime: 2022-10-27 00:21:02 +0800
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2022-11-02 15:36:50
  * @Description :
  */
 import { createApp } from 'vue'
@@ -26,5 +26,10 @@ app.use(vAuth).use(vClickOutside)
 // web component
 // app.config.compilerOptions.isCustomElement = tag =>
 //   /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
+// import 'element-plus/dist/index.css'
+// import ElementPlus from 'element-plus'
+// import('element-plus').then(({ default: ElementPlus }) => {
+// app.use(ElementPlus)
+// })
 
 app.mount('#app')

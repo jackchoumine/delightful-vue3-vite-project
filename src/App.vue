@@ -1,8 +1,8 @@
 <!--
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
- * @LastEditors : JackChou
- * @LastEditTime: 2022-10-27 01:00:52 +0800
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2022-11-02 15:26:52
  * @Description : 
 -->
 <script setup>
@@ -24,11 +24,15 @@
   function changePerson(params) {
     person.name = 'HELLO_WORLD'
   }
+  const loading = ref(true)
+  setTimeout(() => {
+    loading.value = !loading.value
+  }, 5000)
 </script>
 
 <template>
   <div>
-    <FileViewer />
+    <FileViewer v-loading="loading" />
     <hr />
     <h2>测试jsx 中使用插槽</h2>
     <Button>
@@ -58,7 +62,9 @@
       </template>
     </UseButton>
     <hr />
-    <HelloWorld v-if="show" v-clickOutside="clickOutside" />
+    <!-- v-clickOutside="clickOutside"  -->
+    <HelloWorld v-if="show" />
+    <ElButton type="primary">el Button</ElButton>
     <button @click="toggle">toggle</button>
     <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
       <span slot="left">工资：</span>

@@ -45,6 +45,20 @@ show 是 ref。
 
 ## 如何使用自定义指令？
 
+比如 element-plus 的 v-loading
+
+```jsx
+setup() {
+  const loading = ref(true)
+  setTimeout(() => {
+    loading.value = !loading.value
+  }, 5000)
+  return () => <div v-loading={loading.value}></div>
+}
+```
+
+> 按需自动导入报错。
+
 ## 插槽
 
 从 setup 函数的第二参数解构出 slots
