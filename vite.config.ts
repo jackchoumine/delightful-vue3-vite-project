@@ -1,13 +1,14 @@
 /*
  * @Date        : 2022-08-08 15:54:09
  * @Author      : ZhouQijun
- * @LastEditors : ZhouQijun
- * @LastEditTime: 2022-10-18 13:01:27
+ * @LastEditors : JackChou
+ * @LastEditTime: 2022-10-27 00:29:29 +0800
  * @Description : vite 配置
  */
 // @ts-nocheck
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 
@@ -23,6 +24,7 @@ export default defineConfig({
         },
       },
     }),
+    vueJsx(),
     AutoImport({
       imports: ['vue'], //, 'vue-router']
     }),
