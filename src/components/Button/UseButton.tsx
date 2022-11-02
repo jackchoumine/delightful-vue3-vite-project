@@ -2,8 +2,8 @@
  * @Description : 使用 Button
  * @Date        : 2022-10-27 00:40:00 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-10-27 01:13:30 +0800
- * @LastEditors : JackChou
+ * @LastEditTime: 2022-11-02 14:51:14
+ * @LastEditors : ZhouQiJun
  */
 import Button from './Button'
 
@@ -24,8 +24,14 @@ const UseButton = defineComponent({
         default: () => <span style={{ color: 'red' }}>hello</span>,
       })
     }
+    const show = ref(false)
     // NOTE 第一种方式
-    return () => <Button v-slots={children}></Button>
+    return () => (
+      <div>
+        <h2 v-show={show.value}></h2>
+        <Button v-slots={children}></Button>
+      </div>
+    )
 
     // NOTE 第二种方式
     // return () => <Button>{children}</Button>

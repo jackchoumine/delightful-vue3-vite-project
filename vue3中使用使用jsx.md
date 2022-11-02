@@ -35,6 +35,14 @@ jsx
 
 jsx 可读性较差。
 
+## v-show
+
+```jsx
+<h2 v-show={show.value}></h2>
+```
+
+show 是 ref。
+
 ## 如何使用自定义指令？
 
 ## 插槽
