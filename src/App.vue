@@ -2,11 +2,11 @@
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2022-11-02 15:26:52
+ * @LastEditTime: 2022-11-04 09:43:26
  * @Description : 
 -->
 <script setup>
-  import { FileViewer, HelloWorld, Button, UseButton } from './components'
+  import { FileViewer, HelloWorld, Button, UseButton, WatchDemo } from './components'
   const show = ref(true)
   const endValue = ref(2000)
   function toggle() {
@@ -32,6 +32,8 @@
 
 <template>
   <div>
+    <WatchDemo />
+    <hr />
     <FileViewer v-loading="loading" />
     <hr />
     <h2>测试jsx 中使用插槽</h2>
