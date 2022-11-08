@@ -1,37 +1,33 @@
 <!--
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
- * @LastEditors : JackChou
- * @LastEditTime: 2022-10-27 01:00:52 +0800
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2022-11-07 11:58:08
  * @Description : 
 -->
 <script setup>
-  import { FileViewer, HelloWorld, Button, UseButton, ChartDemos } from './components'
+  import {
+    FileViewer,
+    HelloWorld,
+    Button,
+    UseButton,
+    WatchDemo,
+    TestStencilWC,
+  } from './components'
   const show = ref(true)
-  const endValue = ref(2000)
-  function toggle() {
-    show.value = !show.value
-    endValue.value = Math.random() * 10000
-  }
-  function clickOutside() {
-    console.log('clickOutSide')
-  }
-
-  function updated({ detail }) {
-    console.log(detail)
-  }
-  const person = reactive({ name: 'jack' })
-  function changePerson(params) {
-    person.name = 'HELLO_WORLD'
-  }
+  const loading = ref(true)
+  setTimeout(() => {
+    loading.value = !loading.value
+  }, 5000)
 </script>
 
 <template>
   <div>
-    <h1>测试web component</h1>
-    <ChartDemos />
+    <TestStencilWC />
     <hr />
-    <FileViewer />
+    <WatchDemo />
+    <hr />
+    <FileViewer v-loading="loading" />
     <hr />
     <!-- 
     <h2>测试jsx 中使用插槽</h2>
@@ -44,7 +40,8 @@
         <span style="margin-left: 10px">right</span>
       </template>
     </Button>
-    <UseButton>
+    -->
+    <!-- <UseButton>
       <template #left>
         <span>左</span>
       </template>
@@ -60,7 +57,7 @@
       <template #right>
         <span>右</span>
       </template>
-    </UseButton>
+    </UseButton> 
     <hr />
     <HelloWorld v-if="show" v-clickOutside="clickOutside" />
     -->

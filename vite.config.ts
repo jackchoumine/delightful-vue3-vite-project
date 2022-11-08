@@ -1,8 +1,8 @@
 /*
  * @Date        : 2022-08-08 15:54:09
  * @Author      : ZhouQijun
- * @LastEditors : JackChou
- * @LastEditTime: 2022-10-27 00:29:29 +0800
+ * @LastEditors : ZhouQiJun
+ * @LastEditTime: 2022-11-02 15:21:05
  * @Description : vite 配置
  */
 // @ts-nocheck
@@ -11,6 +11,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 const isCustomElement = tag => /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
 
@@ -27,6 +29,10 @@ export default defineConfig({
     vueJsx(),
     AutoImport({
       imports: ['vue'], //, 'vue-router']
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
   ],
   server: {

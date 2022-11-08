@@ -2,12 +2,16 @@
  * @Description : 使用 Button
  * @Date        : 2022-10-27 00:40:00 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-10-28 01:26:20 +0800
- * @LastEditors : JackChou
+ * @LastEditTime: 2022-11-02 15:33:34
+ * @LastEditors : ZhouQiJun
  */
+// import { clickOutside } from '../../plugins/directive'
 import Button from './Button'
-
+// import {} from 'element-plus/'
 const UseButton = defineComponent({
+  // directives: {
+  //   clickOutside,
+  // },
   setup(props, { slots }) {
     console.log('useButton slots')
     console.log(slots)
@@ -24,17 +28,21 @@ const UseButton = defineComponent({
         default: () => <span style={{ color: 'red' }}>hello</span>,
       })
     }
-    const directives = [
-      {
-        name: 'auth',
-        value: 'li',
-        modifiers: {
-          disabled: true,
-        },
-      },
-    ]
-    // NOTE 第一种方式 {...directives}
-    return () => <Button v-slots={children}></Button>
+    const show = ref(false)
+    function clickOutside() {
+      console.log('clickOutSide of Button')
+    }
+    const loading = ref(true)
+    setTimeout(() => {
+      loading.value = !loading.value
+    }, 5000)
+    // NOTE 第一种方式
+    return () => (
+      <div v-loading={loading.value}>
+        <h2 v-show={show.value}></h2>
+        <Button v-slots={children} v-clickOutside={clickOutside}></Button>
+      </div>
+    )
 
     // NOTE 第二种方式
     // return () => <Button>{children}</Button>
