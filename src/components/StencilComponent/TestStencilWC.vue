@@ -7,6 +7,15 @@
 -->
 <template>
   <div>
+    <hello-stencil
+      ref="hs"
+      :name="name"
+      :attr-array.prop="attrArray"
+      :array.prop="array"
+      :person.prop="person"
+      :attr-person.prop="attrPerson"
+      @my-click="myClick"
+    ></hello-stencil>
     <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
     <button type="button" @click="changePerson">修改person</button>
     <hr />
@@ -19,7 +28,15 @@
 </template>
 
 <script setup>
+  const name = '测试stencilComponent'
+  const attrArray = reactive([{ name: 'vue3' }])
+  const array = reactive([{ name: 'vue3' }])
   const person = reactive({ name: 'jack' })
+  const attrPerson = reactive({ name: 'jack' })
+
+  function myClick({ type }) {
+    console.log(type)
+  }
   function changePerson(params) {
     person.name = 'HELLO_WORLD'
   }
@@ -31,13 +48,18 @@
     endValue.value = Math.random() * 10000
   }
   function updated({ detail }) {
-    console.log('on-end***********')
+    console.log('on-end**********')
     console.log(detail)
   }
+  const hs = ref()
   onMounted(() => {
     const countTo = document.querySelector('count-to')
     console.log(countTo)
     countTo.addEventListener('on-end', updated)
+    console.log(hs.value)
+    // hs.value.person = person.value
+    // hs.value.setAttribute('person', person.value)
+    hs.value.attrPerson = attrPerson.value
   })
 </script>
 

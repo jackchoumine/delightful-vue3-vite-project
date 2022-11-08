@@ -19,6 +19,7 @@ import 'jack-web-ui/dist/jack-web-ui/jack-web-ui.css'
 // import { MyRating } from 'jack-web-ui/dist/components/index'
 import {
   ELineChart,
+  HelloStencil
   // defineCustomElementELineChart,
 } from 'echarts-web-components/dist/components'
 // customElements.define('count-to', CountTo as unknown as CustomElementConstructor)
@@ -26,6 +27,7 @@ import { CountTo } from 'jack-web-ui/dist/components'
 customElements.define('count-to', CountTo as unknown as CustomElementConstructor)
 customElements.define('line-chart', ELineChart as unknown as CustomElementConstructor)
 // customElements.define('line-chart', ELineChart as unknown as CustomElementConstructor)
+customElements.define('hello-stencil',  HelloStencil as unknown as CustomElementConstructor)
 
 const app = createApp(App)
 
