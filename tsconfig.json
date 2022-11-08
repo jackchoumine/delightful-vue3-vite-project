@@ -27,6 +27,6 @@
     "src/**/*.vue",
     "src/**/*.js",
     "auto-imports.d.ts"
-  ],
+, "src/test-lit.js"  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

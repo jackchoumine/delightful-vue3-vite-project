@@ -6,7 +6,7 @@
  * @Description : 
 -->
 <script setup>
-  import { FileViewer, HelloWorld, Button, UseButton } from './components'
+  import { FileViewer, HelloWorld, Button, UseButton, ChartDemos } from './components'
   const show = ref(true)
   const endValue = ref(2000)
   function toggle() {
@@ -28,8 +28,12 @@
 
 <template>
   <div>
+    <h1>测试web component</h1>
+    <ChartDemos />
+    <hr />
     <FileViewer />
     <hr />
+    <!-- 
     <h2>测试jsx 中使用插槽</h2>
     <Button>
       <template #left>
@@ -59,6 +63,7 @@
     </UseButton>
     <hr />
     <HelloWorld v-if="show" v-clickOutside="clickOutside" />
+    -->
     <button @click="toggle">toggle</button>
     <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
       <span slot="left">工资：</span>
