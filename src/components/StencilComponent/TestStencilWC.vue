@@ -8,13 +8,16 @@
 <template>
   <div>
     <hello-stencil
+      :key="key"
       ref="hs"
       :name="name"
-      :attr-array.prop="attrArray"
+      :attr-array="attrArray"
       :array.prop="array"
       :person.prop="person"
-      :attr-person.prop="attrPerson"
+      :attr-person="attrPerson"
       @my-click="myClick"
+      @myClick="myClick"
+      @myclick="myClick"
     ></hello-stencil>
     <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
     <button type="button" @click="changePerson">修改person</button>
@@ -28,14 +31,23 @@
 </template>
 
 <script setup>
-  const name = '测试stencilComponent'
-  const attrArray = reactive([{ name: 'vue3' }])
-  const array = reactive([{ name: 'vue3' }])
-  const person = reactive({ name: 'jack' })
-  const attrPerson = reactive({ name: 'jack' })
-
+  const name = ref('测试stencilComponent')
+  const attrArray = ref([{ name: 'vue3' }])
+  const array = ref([{ name: 'vue3' }])
+  const person = ref({ name: 'jack' })
+  const attrPerson = ref({ name: 'jack' })
+  const key = ref('')
   function myClick({ type }) {
     console.log(type)
+    name.value = type
+    // attrArray.value = [{ name: 'jack' }]
+    // array.value = [{ name: 'jack' }]
+    // person.value = { name: 'jack' }
+    // Object.assign(person, { name: 'hello' })
+    person.value = { name: Math.random().toString(16) }
+    attrPerson.value = { name: Math.random().toString(16) }
+    attrArray.value = [{ name: Math.random().toString(16) }]
+    array.value = [{ name: Math.random().toString(16) }]
   }
   function changePerson(params) {
     person.name = 'HELLO_WORLD'
@@ -54,12 +66,16 @@
   const hs = ref()
   onMounted(() => {
     const countTo = document.querySelector('count-to')
-    console.log(countTo)
-    countTo.addEventListener('on-end', updated)
+    // console.log(countTo)
+    // countTo.addEventListener('on-end', updated)
     console.log(hs.value)
+    const he = document.querySelector('hello-stencil')
     // hs.value.person = person.value
     // hs.value.setAttribute('person', person.value)
     hs.value.attrPerson = attrPerson.value
+    he.person = person.value
+    he.array = array.value
+    hs.value.attrArray = attrArray.value
   })
 </script>
 
