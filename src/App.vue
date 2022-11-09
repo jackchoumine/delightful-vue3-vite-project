@@ -59,10 +59,15 @@
       </template>
     </UseButton> 
     <hr />
+    <HelloWorld v-if="show" v-clickOutside="clickOutside" />
     -->
-    <!-- v-clickOutside="clickOutside"  -->
-    <HelloWorld v-if="show" />
-    <ElButton type="primary">el Button</ElButton>
+    <button @click="toggle">toggle</button>
+    <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
+      <span slot="left">工资：</span>
+      <span slot="right">$</span>
+    </count-to>
+    <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
+    <button type="button" @click="changePerson">修改person</button>
   </div>
 </template>
 
