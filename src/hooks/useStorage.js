@@ -1,5 +1,3 @@
-import { ref, onMounted, onUnmounted } from 'vue'
-
 function getItem(key, storage) {
   const value = storage.getItem(key)
   if (!value) return null
@@ -22,9 +20,9 @@ export function useStorage(key, type = 'session') {
       break
   }
 
-  const value = ref(getItem(key, storage))
+  const value = shallowRef(getItem(key, storage))
   function setItem(storage) {
-    return (newValue) => {
+    return newValue => {
       value.value = newValue
       storage.setItem(key, JSON.stringify(newValue))
     }

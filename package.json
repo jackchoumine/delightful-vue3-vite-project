@@ -13,6 +13,7 @@
     "d": "bash deploy.sh"
   },
   "dependencies": {
+    "@popperjs/core": "~2.11.6",
     "echarts-web-components": "~0.0.3",
     "element-plus": "^2.2.19",
     "haunted": "^5.0.0",

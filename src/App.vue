@@ -14,6 +14,8 @@
     WatchDemo,
     TestStencilWC,
     TestHaunted,
+    PopperButton,
+    PopperButtonHook,
   } from './components'
   const show = ref(true)
   const loading = ref(true)
@@ -24,6 +26,9 @@
 
 <template>
   <div>
+    <PopperButtonHook />
+    <PopperButton />
+    <hr />
     <TestHaunted />
     <hr />
     <TestStencilWC />

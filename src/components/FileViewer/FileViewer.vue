@@ -42,8 +42,9 @@
       const { value, remove } = useLocalStorage('jack', { name: 'jack' })
       const { width, height } = useWindowResize()
       const [person, setItem] = useStorage('jack')
-
-      setItem({ name: 'jack' })
+      // console.log('person: ')
+      // console.log(person)
+      setItem({ name: 'reactive session storage' })
 
       const pDOM = ref(null)
 
