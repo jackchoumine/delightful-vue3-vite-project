@@ -2,7 +2,7 @@
  * @Description : 导出组件
  * @Date        : 2022-10-15 19:51:59 +0800
  * @Author      : JackChou
- * @LastEditTime: 2022-11-07 11:51:03
+ * @LastEditTime: 2022-11-10 09:06:36
  * @LastEditors : ZhouQiJun
  */
 export { default as HelloWorld } from './HelloWorld.vue'
@@ -13,3 +13,4 @@ export { default as ChartDemos } from './WebComponents/ChartDemos.vue'
 export * from './Button'
 export { default as WatchDemo } from './WatchDemo/WatchDemo.vue'
 export { default as TestStencilWC } from './StencilComponent/TestStencilWC.vue'
+export { default as TestHaunted } from './HauntedComponent/TestHaunted.vue'
