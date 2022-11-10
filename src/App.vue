@@ -2,7 +2,7 @@
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2022-11-07 11:58:08
+ * @LastEditTime: 2022-11-10 09:06:14
  * @Description : 
 -->
 <script setup>
@@ -13,6 +13,7 @@
     UseButton,
     WatchDemo,
     TestStencilWC,
+    TestHaunted,
   } from './components'
   const show = ref(true)
   const loading = ref(true)
@@ -23,6 +24,8 @@
 
 <template>
   <div>
+    <TestHaunted />
+    <hr />
     <TestStencilWC />
     <hr />
     <WatchDemo />
