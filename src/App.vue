@@ -2,7 +2,7 @@
  * @Date        : 2022-08-08 14:23:25
  * @Author      : ZhouQijun
  * @LastEditors : ZhouQiJun
- * @LastEditTime: 2022-11-10 09:06:14
+ * @LastEditTime: 2022-11-11 09:26:41
  * @Description : 
 -->
 <script setup>
@@ -16,6 +16,7 @@
     TestHaunted,
     PopperButton,
     PopperButtonHook,
+    HookDemo,
   } from './components'
   const show = ref(true)
   const loading = ref(true)
@@ -26,6 +27,7 @@
 
 <template>
   <div>
+    <HookDemo />
     <PopperButtonHook />
     <PopperButton />
     <hr />
