@@ -4,7 +4,7 @@
 
 ### 打开新窗口
 
-`ctrl + shfit + n`
+`ctrl + shift + n`
 
 ### 关闭窗口
 
@@ -12,7 +12,7 @@
 
 ### 左侧文件浏览
 
-`ctrl + shfit + e`
+`ctrl + shift + e`
 
 ### 关闭当前编辑的文件
 
@@ -48,15 +48,11 @@
 
 ### 选中
 
-`ctrl + shfit + 方向键`
+`ctrl + shift + 方向键`
 
-### 快速复制
+## 复制
 
-`shfit + alt + 上下键`
-
-### 快速删除行
-
-`ctrl + shfit + x`
+`shift + alt + 上下键`
 
 ### 撤销
 
@@ -64,15 +60,15 @@
 
 ### 撤销之前的撤销操作
 
-`ctrl + shfit + z`
+`ctrl + shift + z`
 
 ### 全局搜索
 
-`ctrl + shfit + f`
+`ctrl + shift + f`
 
 ### 全局替换
 
-`ctrl + shfit + h`
+`ctrl + shift + h`
 
 ### 当前文件搜索
 
@@ -82,7 +78,24 @@
 
 `ctrl + h`
 
-# window 10 快捷键、
+## 删除系列
+
+`delete` 删除光标后面的字符
+`ctrl + delete` 删除光标后面的单词
+
+`backspace` 删除光标前面的字符
+`ctrl + backspace` 删除光标前面的单词
+
+`ctrl + shift + x` 删除行
+
+## 光标移动
+
+`home` 行首
+`end` 行末
+`ctrl + enter` 在下一行插入新行
+`ctrl + shift + enter` 在上一行插入新行
+
+# window 10 快捷键
 
 ## 回到桌面
 
