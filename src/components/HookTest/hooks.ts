@@ -35,3 +35,24 @@ export function http(key) {
     }, 100)
   })
 }
+
+export function useAdd(a: MaybeRef<number>, b: MaybeRef<number>) {
+  log()
+  return computed(() => unref(a) + unref(b))
+}
+
+function log() {
+  console.log('useAdd')
+}
+
+export function useModel(props, name: string) {
+  const emit = getCurrentInstance().emit
+  return computed({
+    get() {
+      return props[name]
+    },
+    set(value) {
+      emit(`update:${name}`, value)
+    },
+  })
+}

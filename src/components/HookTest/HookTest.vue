@@ -12,13 +12,24 @@
       <li v-for="(item, index) in list" :key="index">{{ item.name }}</li>
     </ul>
     <p>{{ input }}</p>
+    <p>c:{{ c }}</p>
+    <button type="button" @click="b = 100">修改b</button>
   </div>
 </template>
 
-<script setup>
-  import { useHttpGet } from './hooks'
-  const input = ref('')
-  const { list } = useHttpGet(input)
+<script>
+  import { useHttpGet, useAdd } from './hooks'
+  import './testUseAdd'
+  export default {
+    setup() {
+      const input = ref('')
+      const { list } = useHttpGet(input)
+      const a = 1
+      const b = ref(10)
+      const c = useAdd(a, b)
+      return { b, c, list }
+    },
+  }
 </script>
 
 <style lang="scss"></style>
