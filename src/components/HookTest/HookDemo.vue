@@ -8,6 +8,7 @@
 <template>
   <div>
     <h2>测试hook</h2>
+    <UseMouseFollower />
     <TestHook />
     <!-- <VideoPlayer /> -->
     <MyInput v-model:input="name" />
@@ -24,6 +25,7 @@
   import TestHook from './HookTest.vue'
   import VideoPlayer from '../VideoPlayer/VideoPlayer.vue'
   import MyInput from './MyInput.vue'
+  import UseMouseFollower from './UseMouseDemo.vue'
   import { Modal, ModalHeader } from './Modal'
   const name = ref('')
 </script>
