@@ -10,7 +10,8 @@ export function useMouseFollower(position: LazyOrRef<{ x: number; y: number }>) 
       position: 'fixed',
       top: 0,
       left: 0,
-      transform: `translate3d(${x}px, ${y}px, 0)`,
+      // 添加一定的偏移，否则鼠标被遮挡，无法聚焦其他元素
+      transform: `translate3d(${x + 10}px, ${y + 10}px, 0)`,
     }
   })
 

@@ -16,7 +16,7 @@
     <p ref="myP">height:{{ height }}</p>
     <h2>网络在线吗？{{ isOnline ? '在' : '不在' }}</h2>
     <div class="box">box</div>
-    <!-- <p>点到myP外部了吗？{{ isClickOutside ? '是' : '否' }}</p> -->
+    <!-- <p :ref="whenClickOutside">点到myP外部了吗？{{ isClickOutside ? '是' : '否' }}</p> -->
   </div>
 </template>
 
@@ -26,7 +26,7 @@
     useWindowResize,
     useStorage,
     useNetworkStatus,
-    useOnClickOutside,
+    useOnClickOutsideV2,
   } from '@hooks'
 
   export default defineComponent({
@@ -58,7 +58,9 @@
       // const isClickOutside = useOnClickOutside(pDOM, () => {
       //   console.log('click outside')
       // })
-
+      // const { isClickOutside, whenClickOutside } = useOnClickOutsideV2(dom => {
+      //   console.log('点击了', dom)
+      // })
       watch(width, val => {
         console.log(val)
       })
@@ -79,7 +81,8 @@
         person,
         myP: pDOM,
         style,
-        // isClickOutside
+        // whenClickOutside,
+        // isClickOutside,
       }
     },
   })

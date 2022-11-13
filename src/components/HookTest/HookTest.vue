@@ -27,7 +27,7 @@
       const a = 1
       const b = ref(10)
       const c = useAdd(a, b)
-      return { b, c, list }
+      return { b, c, list, input }
     },
   }
 </script>
