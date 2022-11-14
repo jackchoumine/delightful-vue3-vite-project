@@ -7,6 +7,7 @@
  */
 import type { Ref } from 'vue'
 
+
 type MaybeRef<T> = Ref<T> | T
 
 export function useHttpGet(key: MaybeRef<string>) {
@@ -33,5 +34,26 @@ export function http(key) {
       key && (list = list.filter(item => item.name.includes(key)))
       resolve(list)
     }, 100)
+  })
+}
+
+export function useAdd(a: MaybeRef<number>, b: MaybeRef<number>) {
+  log()
+  return computed(() => unref(a) + unref(b))
+}
+
+function log() {
+  console.log('useAdd')
+}
+
+export function useModel(props, name: string) {
+  const emit = getCurrentInstance().emit
+  return computed({
+    get() {
+      return props[name]
+    },
+    set(value) {
+      emit(`update:${name}`, value)
+    },
   })
 }
