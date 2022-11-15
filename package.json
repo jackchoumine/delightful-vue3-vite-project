@@ -13,7 +13,13 @@
     "d": "bash deploy.sh",
     "lint": "eslint \"src/**/*.{vue,tsx,ts,jsx,js}\" --quite --fix",
     "lint:style": "stylelint \"src/**/*.{scss,css}\"",
-    "prettier":"prettier \"src/**/*.{vue,ts,tsx,js,jsx,css,scss}\" --write"
+    "prettier": "prettier \"src/**/*.{vue,ts,tsx,js,jsx,css,scss}\" --write"
+  },
+  "lint-staged": {
+    "*.{js,vue,ts,jsx,tsx,css,scss,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@popperjs/core": "~2.11.6",
@@ -42,6 +48,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.7.0",
+    "husky": "8.0.2",
+    "lint-staged": "13.0.3",
     "postcss-html": "1.5.0",
     "postcss-scss": "4.0.5",
     "prettier": "2.7.1",

@@ -7,13 +7,14 @@
 -->
 <script>
 import Modal from './Modal/MyModal.vue'
+const st = 'hekkio'
 export default {
   components: {
     Modal,
   },
   directives: {
     focus: {
-      mounted(el, binding, vNode) {
+      mounted(el) {
         // 获取input，并调用其focus()方法
         el.focus()
       },
