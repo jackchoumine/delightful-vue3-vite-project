@@ -16,7 +16,7 @@
     "prettier": "prettier \"src/**/*.{vue,ts,tsx,js,jsx,css,scss}\" --write"
   },
   "lint-staged": {
-    "*.{js,vue,ts,jsx,tsx,css,scss,md}": [
+    "*.{js,vue,ts,jsx,tsx,css,scss}": [
       "prettier --write",
       "eslint --fix"
     ]
