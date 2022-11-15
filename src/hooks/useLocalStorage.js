@@ -8,11 +8,11 @@ const useLocalStorage = (storageKey, defaultValue = '') => {
       value.value = parseItem(item)
       return
     }
-    /* @ts-ignore*/
+    /* @ts-ignore */
     value.value = defaultValue
   }
 
-  const parseItem = (item) => {
+  const parseItem = item => {
     let value = null
     try {
       value = JSON.parse(item)
@@ -23,7 +23,7 @@ const useLocalStorage = (storageKey, defaultValue = '') => {
     return value
   }
 
-  const handler = (event) => {
+  const handler = event => {
     if (event.key === storageKey) {
       value.value = event.newValue ? parseItem(event.newValue) : null
     }
@@ -66,7 +66,7 @@ const useLocalStorage = (storageKey, defaultValue = '') => {
 
   return {
     value,
-    remove
+    remove,
   }
 }
 

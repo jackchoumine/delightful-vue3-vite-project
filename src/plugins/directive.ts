@@ -45,10 +45,10 @@ export const auth = {
             el.remove()
           }
         }
-      }
+      },
     })
     return app
-  }
+  },
 }
 
 export const clickOutside = (app: App, options: any) => {
@@ -92,7 +92,7 @@ export const clickOutside = (app: App, options: any) => {
     beforeUnmount(el) {
       console.log('beforeUnmount')
       document.removeEventListener('click', el.onClick, false)
-    }
+    },
     // unmounted(el, binding) {
     //   console.log('unmounted')
     //   console.log(el)

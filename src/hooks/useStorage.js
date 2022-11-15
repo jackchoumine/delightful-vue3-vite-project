@@ -16,8 +16,8 @@ export function useStorage(key, type = 'session') {
       break
     case 'local':
       storage = localStorage
+    // eslint-disable-next-line no-fallthrough
     default:
-      break
   }
 
   const value = shallowRef(getItem(key, storage))

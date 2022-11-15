@@ -1,3 +1,12 @@
 {
-  "recommendations": ["Vue.volar"]
+  "recommendations": [
+    // 必须安装的
+    "Vue.volar",
+    "stylelint.vscode-stylelint",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    // 推荐安装
+    "Gruntfuggly.todo-tree",
+    "eamodio.gitlens"
+  ]
 }

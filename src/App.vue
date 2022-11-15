@@ -1,31 +1,32 @@
 <!--
- * @Date        : 2022-08-08 14:23:25
- * @Author      : ZhouQijun
- * @LastEditors : ZhouQiJun
- * @LastEditTime: 2022-11-11 09:26:41
- * @Description : 
+  * @Date        : 2022-08-08 14:23:25
+  * @Author      : ZhouQijun
+  * @LastEditors : ZhouQiJun
+  * @LastEditTime: 2022-11-11 09:26:41
+  * @Description : 
 -->
 <script setup>
-  import {
-    FileViewer,
-    HelloWorld,
-    Button,
-    UseButton,
-    WatchDemo,
-    TestStencilWC,
-    TestHaunted,
-    PopperButton,
-    PopperButtonHook,
-    HookDemo,
-  } from './components'
-  const show = ref(true)
-  const loading = ref(true)
-  setTimeout(() => {
-    loading.value = !loading.value
-  }, 5000)
+import {
+  FileViewer,
+  HelloWorld,
+  Button,
+  UseButton,
+  WatchDemo,
+  TestStencilWC,
+  TestHaunted,
+  PopperButton,
+  PopperButtonHook,
+  HookDemo,
+} from './components'
+const show = ref(true)
+const loading = ref(true)
+setTimeout(() => {
+  loading.value = !loading.value
+}, 5000)
 </script>
 
 <template>
+  <!-- eslint-disable vue/no-deprecated-slot-attribute -->
   <div>
     <HookDemo />
     <PopperButtonHook />

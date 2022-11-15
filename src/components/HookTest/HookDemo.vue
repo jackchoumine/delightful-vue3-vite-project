@@ -22,12 +22,12 @@
 </template>
 
 <script setup lang="ts">
-  import TestHook from './HookTest.vue'
-  import VideoPlayer from '../VideoPlayer/VideoPlayer.vue'
-  import MyInput from './MyInput.vue'
-  import UseMouseFollower from './UseMouseDemo.vue'
-  import { Modal, ModalHeader } from './Modal'
-  const name = ref('')
+import TestHook from './HookTest.vue'
+import VideoPlayer from '../VideoPlayer/VideoPlayer.vue'
+import MyInput from './MyInput.vue'
+import UseMouseFollower from './UseMouseDemo.vue'
+import { Modal, ModalHeader } from './Modal'
+const name = ref('')
 </script>
 
 <style lang="scss"></style>

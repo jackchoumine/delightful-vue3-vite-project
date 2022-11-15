@@ -27,7 +27,7 @@ async function testMSSQL() {
   try {
     await mssql.connect(sqlConfig)
     const sql =
-      /* sql*/
+      /* sql */
       `SELECT salary, emp_name, bonus, job_id, hire_date
         FROM employee WHERE emp_name = 'Liu Bei' AND salary > 10000
         ORDER BY salary DESC`

@@ -3,7 +3,7 @@ import { createContext } from './createContext'
 const [modalProvider, useContext] = createContext('modal')
 
 export const Modal = defineComponent({
-  name: 'Modal',
+  name: 'MyModal',
   setup(props, { slots }) {
     const id = 'id' + Math.random().toString(16).slice(2)
     modalProvider(computed(() => ({ headerId: 'hello' + id })))
@@ -11,7 +11,7 @@ export const Modal = defineComponent({
       h(
         'div',
         {
-          id: id,
+          id,
         },
         slots
       )

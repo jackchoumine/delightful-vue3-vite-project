@@ -7,7 +7,6 @@
  */
 import type { Ref } from 'vue'
 
-
 type MaybeRef<T> = Ref<T> | T
 
 export function useHttpGet(key: MaybeRef<string>) {

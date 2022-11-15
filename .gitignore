@@ -26,3 +26,4 @@ auto-imports.d.ts
 components.d.ts
 .history
 dfsj.*
+.eslintrc-auto-import.json

@@ -18,18 +18,18 @@
 </template>
 
 <script>
-  import { useHttpGet, useAdd } from './hooks'
-  import './testUseAdd'
-  export default {
-    setup() {
-      const input = ref('')
-      const { list } = useHttpGet(input)
-      const a = 1
-      const b = ref(10)
-      const c = useAdd(a, b)
-      return { b, c, list, input }
-    },
-  }
+import { useHttpGet, useAdd } from './hooks'
+import './testUseAdd'
+export default {
+  setup() {
+    const input = ref('')
+    const { list } = useHttpGet(input)
+    const a = 1
+    const b = ref(10)
+    const c = useAdd(a, b)
+    return { b, c, list, input }
+  },
+}
 </script>
 
 <style lang="scss"></style>
