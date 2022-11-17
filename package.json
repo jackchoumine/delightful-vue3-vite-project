@@ -11,9 +11,10 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "d": "bash deploy.sh",
-    "lint": "eslint \"src/**/*.{vue,tsx,ts,jsx,js}\" --quite --fix",
-    "lint:style": "stylelint \"src/**/*.{scss,css}\"",
-    "prettier": "prettier \"src/**/*.{vue,ts,tsx,js,jsx,css,scss}\" --write"
+    "lint": "eslint 'src/**/*.{vue,tsx,ts,jsx,js}' --quite --fix",
+    "lint:style": "stylelint 'src/**/*.{scss,css}'",
+    "prettier": "prettier 'src/**/*.{vue,ts,tsx,js,jsx,css,scss}' --write",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,vue,ts,jsx,tsx,css,scss}": [
