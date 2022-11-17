@@ -2,7 +2,7 @@
  * @Date        : 2022-08-08 15:54:09
  * @Author      : ZhouQijun
  * @LastEditors : JackChou
- * @LastEditTime: 2022-11-17 22:54:08 +0800
+ * @LastEditTime: 2022-11-18 01:15:11 +0800
  * @Description : vite 配置
  */
 // @ts-nocheck
@@ -13,7 +13,7 @@ import path from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import basicSsl from '@vitejs/plugin-basic-ssl'
+// import basicSsl from '@vitejs/plugin-basic-ssl'
 import fs from 'fs'
 const isCustomElement = tag => /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
 
