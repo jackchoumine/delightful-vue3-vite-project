@@ -28,19 +28,14 @@ function Counter(props) {
     setCount(count + 1)
   }
   console.log('render')
-  return html/*html*/ `
+  return html/* html */ `
     <h2>haunted 测试</h2>
     <div id="count">${count}</div>
     <button type="button" id="my-btn" @click=${onClick}>Increment</button>
     <hr />
     <h4>测试数组property</h4>
     <ul>
-      ${props.testArray?.map(
-        item =>
-          html`
-            <li>${item.name}</li>
-          `
-      )}
+      ${props.testArray?.map(item => html` <li>${item.name}</li> `)}
     </ul>
     <h4>测试对象property</h4>
     <p>name:${props.obj?.name}</p>

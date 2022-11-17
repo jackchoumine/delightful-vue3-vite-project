@@ -18,6 +18,6 @@ export function useWindowResize() {
 
   return {
     width,
-    height
+    height,
   }
 }

@@ -9,17 +9,17 @@
 </template>
 
 <script lang="ts" setup>
-  import { useMouseFollower, useMouse } from '@/hooks'
-  const { x, y } = useMouse()
-  const Follower = useMouseFollower(() => ({ x: x.value, y: y.value }))
+import { useMouseFollower, useMouse } from '@/hooks'
+const { x, y } = useMouse()
+const Follower = useMouseFollower(() => ({ x: x.value, y: y.value }))
 </script>
 
 <style scoped lang="css">
-  .follower-content {
-    background: white;
-    color: black;
-    font-size: 14px;
-    padding: 10px 12px;
-    border-radius: 6px;
-  }
+.follower-content {
+  background: white;
+  color: black;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+}
 </style>

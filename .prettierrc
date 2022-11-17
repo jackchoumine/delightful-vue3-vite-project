@@ -2,20 +2,9 @@
   "singleQuote": true,
   "semi": false,
   "arrowParens": "avoid",
+  "bracketSameLine": true,
   "printWidth": 90,
   "tabWidth": 2,
-  "proseWrap": "preserve",
-  "bracketSpacing": true,
-  "htmlWhitespaceSensitivity": "ignore",
-  "jsxBracketSameLine": false,
-  "jsxSingleQuote": true,
   "useTabs": false,
-  "trailingComma": "es5",
-  "endOfLine": "lf",
-  "vueIndentScriptAndStyle": true,
-  "quoteProps": "as-needed",
-  "rangeStart": 0,
-  "insertPragma": false,
-  "requirePragma": false,
-  "override": [{ "files": "*.md", "options": { "tabWidth": 2 } }]
+  "trailingComma": "es5"
 }

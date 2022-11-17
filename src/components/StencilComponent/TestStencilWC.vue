@@ -6,6 +6,7 @@
  * @Description : 
 -->
 <template>
+  <!-- eslint-disable vue/no-parsing-error  vue/no-deprecated-slot-attribute-->
   <div>
     <hello-stencil
       :key="key"
@@ -17,8 +18,7 @@
       :attr-person="attrPerson"
       @my-click="myClick"
       @myClick="myClick"
-      @myclick="myClick"
-    ></hello-stencil>
+      @myclick="myClick"></hello-stencil>
     <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
     <button type="button" @click="changePerson">修改person</button>
     <hr />
@@ -31,52 +31,52 @@
 </template>
 
 <script setup>
-  const name = ref('测试stencilComponent')
-  const attrArray = ref([{ name: 'vue3' }])
-  const array = ref([{ name: 'vue3' }])
-  const person = ref({ name: 'jack' })
-  const attrPerson = ref({ name: 'jack' })
-  const key = ref('')
-  function myClick({ type }) {
-    console.log(type)
-    name.value = type
-    // attrArray.value = [{ name: 'jack' }]
-    // array.value = [{ name: 'jack' }]
-    // person.value = { name: 'jack' }
-    // Object.assign(person, { name: 'hello' })
-    person.value = { name: Math.random().toString(16) }
-    attrPerson.value = { name: Math.random().toString(16) }
-    attrArray.value = [{ name: Math.random().toString(16) }]
-    array.value = [{ name: Math.random().toString(16) }]
-  }
-  function changePerson(params) {
-    person.name = 'HELLO_WORLD'
-  }
+const name = ref('测试stencilComponent')
+const attrArray = ref([{ name: 'vue3' }])
+const array = ref([{ name: 'vue3' }])
+const person = ref({ name: 'jack' })
+const attrPerson = ref({ name: 'jack' })
+const key = ref('')
+function myClick({ type }) {
+  console.log(type)
+  name.value = type
+  // attrArray.value = [{ name: 'jack' }]
+  // array.value = [{ name: 'jack' }]
+  // person.value = { name: 'jack' }
+  // Object.assign(person, { name: 'hello' })
+  person.value = { name: Math.random().toString(16) }
+  attrPerson.value = { name: Math.random().toString(16) }
+  attrArray.value = [{ name: Math.random().toString(16) }]
+  array.value = [{ name: Math.random().toString(16) }]
+}
+function changePerson(params) {
+  person.name = 'HELLO_WORLD'
+}
 
-  const show = ref(true)
-  const endValue = ref(2000)
-  function toggle() {
-    show.value = !show.value
-    endValue.value = Math.random() * 10000
-  }
-  function updated({ detail }) {
-    console.log('on-end**********')
-    console.log(detail)
-  }
-  const hs = ref()
-  onMounted(() => {
-    const countTo = document.querySelector('count-to')
-    // console.log(countTo)
-    // countTo.addEventListener('on-end', updated)
-    console.log(hs.value)
-    const he = document.querySelector('hello-stencil')
-    // hs.value.person = person.value
-    // hs.value.setAttribute('person', person.value)
-    hs.value.attrPerson = attrPerson.value
-    he.person = person.value
-    he.array = array.value
-    hs.value.attrArray = attrArray.value
-  })
+const show = ref(true)
+const endValue = ref(2000)
+function toggle() {
+  show.value = !show.value
+  endValue.value = Math.random() * 10000
+}
+function updated({ detail }) {
+  console.log('on-end**********')
+  console.log(detail)
+}
+const hs = ref()
+onMounted(() => {
+  const countTo = document.querySelector('count-to')
+  // console.log(countTo)
+  // countTo.addEventListener('on-end', updated)
+  console.log(hs.value)
+  const he = document.querySelector('hello-stencil')
+  // hs.value.person = person.value
+  // hs.value.setAttribute('person', person.value)
+  hs.value.attrPerson = attrPerson.value
+  he.person = person.value
+  he.array = array.value
+  hs.value.attrArray = attrArray.value
+})
 </script>
 
 <style lang="scss"></style>

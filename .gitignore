@@ -13,8 +13,8 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+# .vscode/*
+# !.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -26,3 +26,4 @@ auto-imports.d.ts
 components.d.ts
 .history
 dfsj.*
+.eslintrc-auto-import.json

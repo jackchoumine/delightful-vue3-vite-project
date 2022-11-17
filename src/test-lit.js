@@ -1,12 +1,12 @@
 import { css as p, LitElement as f, html as d } from 'lit'
 import { property as c, customElement as h } from 'lit/decorators.js'
-var u = Object.defineProperty,
-  m = Object.getOwnPropertyDescriptor,
-  n = (r, e, s, i) => {
-    for (var o = i > 1 ? void 0 : i ? m(e, s) : e, a = r.length - 1, l; a >= 0; a--)
-      (l = r[a]) && (o = (i ? l(e, s, o) : l(o)) || o)
-    return i && o && u(e, s, o), o
-  }
+const u = Object.defineProperty
+const m = Object.getOwnPropertyDescriptor
+const n = (r, e, s, i) => {
+  for (var o = i > 1 ? void 0 : i ? m(e, s) : e, a = r.length - 1, l; a >= 0; a--)
+    (l = r[a]) && (o = (i ? l(e, s, o) : l(o)) || o)
+  return i && o && u(e, s, o), o
+}
 let t = class extends f {
   constructor() {
     super(...arguments),
@@ -14,6 +14,7 @@ let t = class extends f {
       (this.array = [0, 2]),
       (this.count = 0)
   }
+
   render() {
     return d`
       <div>
@@ -28,6 +29,7 @@ let t = class extends f {
       <p class="read-the-docs">${this.docsHint}</p>
     `
   }
+
   _onClick() {
     this.count++
   }

@@ -25,6 +25,10 @@ import {
 } from 'echarts-web-components/dist/components'
 // customElements.define('count-to', CountTo as unknown as CustomElementConstructor)
 import { CountTo } from 'jack-web-ui/dist/components'
+// web component
+// app.config.compilerOptions.isCustomElement = tag =>
+//   /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
+import { ElLoading } from 'element-plus'
 customElements.define('count-to', CountTo as unknown as CustomElementConstructor)
 customElements.define('line-chart', ELineChart as unknown as CustomElementConstructor)
 // customElements.define('line-chart', ELineChart as unknown as CustomElementConstructor)
@@ -36,10 +40,6 @@ customElements.define(
 const app = createApp(App)
 
 app.use(vAuth).use(vClickOutside)
-// web component
-// app.config.compilerOptions.isCustomElement = tag =>
-//   /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
-import { ElLoading } from 'element-plus'
 app.use(ElLoading)
 // import 'element-plus/dist/index.css'
 // import ElementPlus from 'element-plus'

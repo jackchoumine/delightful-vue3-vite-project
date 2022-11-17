@@ -21,76 +21,76 @@
 </template>
 
 <script>
-  import {
-    useLocalStorage,
-    useWindowResize,
-    useStorage,
-    useNetworkStatus,
-    useOnClickOutsideV2,
-  } from '@hooks'
+import {
+  useLocalStorage,
+  useWindowResize,
+  useStorage,
+  useNetworkStatus,
+  useOnClickOutsideV2,
+} from '@hooks'
 
-  export default defineComponent({
-    name: 'FileViewer',
-    props: {
-      height: {
-        type: Number,
-        default: 54,
-      },
+export default defineComponent({
+  name: 'FileViewer',
+  props: {
+    height: {
+      type: Number,
+      default: 54,
     },
-    setup(props) {
-      console.log(props.height)
-      const { value, remove } = useLocalStorage('jack', { name: 'jack' })
-      const { width, height } = useWindowResize()
-      const [person, setItem] = useStorage('jack')
-      // console.log('person: ')
-      // console.log(person)
-      setItem({ name: 'reactive session storage' })
+  },
+  setup(props) {
+    console.log(props.height)
+    const { value, remove } = useLocalStorage('jack', { name: 'jack' })
+    const { width, height } = useWindowResize()
+    const [person, setItem] = useStorage('jack')
+    // console.log('person: ')
+    // console.log(person)
+    setItem({ name: 'reactive session storage' })
 
-      const pDOM = ref(null)
+    const pDOM = ref(null)
 
-      // NOTE lifehook 不能嵌套调用
-      // onMounted(() => {
-      //   console.log('onMounted 1')
-      //   onMounted(() => {
-      //     console.log('onMounted 2')
-      //   })
-      // })
-      // const isClickOutside = useOnClickOutside(pDOM, () => {
-      //   console.log('click outside')
-      // })
-      // const { isClickOutside, whenClickOutside } = useOnClickOutsideV2(dom => {
-      //   console.log('点击了', dom)
-      // })
-      watch(width, val => {
-        console.log(val)
-      })
-      const isOnline = useNetworkStatus(isOnline => {
-        console.log(isOnline)
-      })
-      // FIXME
-      // NOTE 使用 css 变量的技巧
-      const style = computed(() => {
-        return { '--div-height': props.height + 'px' }
-      })
-      return {
-        isOnline,
-        jack: value,
-        remove,
-        width: width,
-        height: height,
-        person,
-        myP: pDOM,
-        style,
-        // whenClickOutside,
-        // isClickOutside,
-      }
-    },
-  })
+    // NOTE lifehook 不能嵌套调用
+    // onMounted(() => {
+    //   console.log('onMounted 1')
+    //   onMounted(() => {
+    //     console.log('onMounted 2')
+    //   })
+    // })
+    // const isClickOutside = useOnClickOutside(pDOM, () => {
+    //   console.log('click outside')
+    // })
+    // const { isClickOutside, whenClickOutside } = useOnClickOutsideV2(dom => {
+    //   console.log('点击了', dom)
+    // })
+    watch(width, val => {
+      console.log(val)
+    })
+    const isOnline = useNetworkStatus(isOnline => {
+      console.log(isOnline)
+    })
+    // FIXME
+    // NOTE 使用 css 变量的技巧
+    const style = computed(() => {
+      return { '--div-height': props.height + 'px' }
+    })
+    return {
+      isOnline,
+      jack: value,
+      remove,
+      width,
+      // height,
+      person,
+      myP: pDOM,
+      style,
+      // whenClickOutside,
+      // isClickOutside,
+    }
+  },
+})
 </script>
 
 <style scoped>
-  .box {
-    height: var(--div-height);
-    background-color: #ddd;
-  }
+.box {
+  height: var(--div-height);
+  background-color: #ddd;
+}
 </style>

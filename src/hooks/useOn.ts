@@ -1,10 +1,10 @@
 type Handler = (event: Event) => void
 
-export function useOn(evntName: string, handler: Handler, target: HTMLElement | Window) {
+export function useOn(eventName: string, handler: Handler, target: HTMLElement | Window) {
   onMounted(() => {
-    target.addEventListener(evntName, handler)
+    target.addEventListener(eventName, handler)
   })
   onUnmounted(() => {
-    target.removeEventListener(evntName, handler)
+    target.removeEventListener(eventName, handler)
   })
 }
