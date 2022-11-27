@@ -14,7 +14,7 @@
   "stylelint.validate": ["css", "less", "postcss", "scss", "vue", "sass"],
   "editor.linkedEditing": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.formatOnSave":false, // 开启自动保存不格式化
+  "editor.formatOnSave": true, // 开启自动保存不格式化
   "editor.defaultFormatter": "esbenp.prettier-vscode", // 默认格式化工具选择prettier
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
