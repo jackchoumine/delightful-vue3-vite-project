@@ -27,3 +27,4 @@ components.d.ts
 .history
 dfsj.*
 .eslintrc-auto-import.json
+test.*
