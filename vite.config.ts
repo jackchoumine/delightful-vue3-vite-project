@@ -50,12 +50,22 @@ export default defineConfig({
     // basicSsl(),
   ],
   server: {
-    open: true,
-    https: {
-      cert: fs.readFileSync(path.join(__dirname, 'keys/cert.crt')),
-      key: fs.readFileSync(path.join(__dirname, 'keys/cert.key')),
+    // open: true,
+    port: 5173,
+    hmr: {
+      // port: 5173,
+      host: 'localhost',
     },
-    host: 'localhost',
+    // hotReload: true,
+    // watch: true,
+    watch: {
+      usePolling: true,
+    },
+    // https: {
+    //   cert: fs.readFileSync(path.join(__dirname, 'keys/cert.crt')),
+    //   key: fs.readFileSync(path.join(__dirname, 'keys/cert.key')),
+    // },
+    // host: 'localhost',
   },
   resolve: {
     alias: {

@@ -6,10 +6,14 @@
  * @Description :
  */
 import { createApp } from 'vue'
+// @ts-ignore
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
 import App from './App.vue'
 import { vAuth, vClickOutside } from './plugins'
 // 导入 haunted 创建的 web component
 import './components/HauntedComponent/haunt-counter'
+
 // import { defineCustomElements } from 'jack-ui/loader'
 // defineCustomElements()
 
@@ -34,12 +38,12 @@ customElements.define('line-chart', ELineChart as unknown as CustomElementConstr
 // customElements.define('line-chart', ELineChart as unknown as CustomElementConstructor)
 customElements.define(
   'hello-stencil',
-  HelloStencil as unknown as CustomElementConstructor
+  HelloStencil as unknown as CustomElementConstructor,
 )
 
 const app = createApp(App)
 
-app.use(vAuth).use(vClickOutside)
+app.use(vAuth).use(vClickOutside).use(Antd)
 app.use(ElLoading)
 // import 'element-plus/dist/index.css'
 // import ElementPlus from 'element-plus'

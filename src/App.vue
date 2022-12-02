@@ -17,7 +17,9 @@ import {
   PopperButton,
   PopperButtonHook,
   HookDemo,
+  // AntDesignDemos,
 } from './components'
+import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
 const show = ref(true)
 const loading = ref(true)
 setTimeout(() => {
@@ -28,6 +30,8 @@ setTimeout(() => {
 <template>
   <!-- eslint-disable vue/no-deprecated-slot-attribute -->
   <div>
+    <AntDesignDemos />
+    <hr />
     <HookDemo />
     <PopperButtonHook />
     <PopperButton />
@@ -73,10 +77,10 @@ setTimeout(() => {
     <HelloWorld v-if="show" v-clickOutside="clickOutside" />
     -->
     <button @click="toggle">toggle</button>
-    <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
+    <!-- <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
       <span slot="left">工资：</span>
       <span slot="right">$</span>
-    </count-to>
+    </count-to> -->
     <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
     <button type="button" @click="changePerson">修改person</button>
   </div>

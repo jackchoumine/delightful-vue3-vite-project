@@ -8,7 +8,7 @@
 <template>
   <div>
     <h2>测试hook</h2>
-    <UseMouseFollower />
+    <!-- <UseMouseFollower /> -->
     <TestHook />
     <!-- <VideoPlayer /> -->
     <MyInput v-model:input="name" />
