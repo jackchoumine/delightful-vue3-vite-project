@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vue-tsc --noEmit && vite build",
+    "test": "vitest",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -36,9 +37,9 @@
     "vue": "^3.2.41"
   },
   "devDependencies": {
-    "@vitejs/plugin-basic-ssl": "~0.1.2",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
+    "@vitejs/plugin-basic-ssl": "~0.1.2",
     "@vitejs/plugin-vue": "~3.2.0",
     "@vitejs/plugin-vue-jsx": "~2.1.0",
     "eslint": "^8.0.1",
@@ -68,6 +69,7 @@
     "unplugin-vue-components": "^0.22.9",
     "vite": "~3.2.4",
     "vitepress": "~1.0.0-alpha.25",
+    "vitest": "0.25.3",
     "vue-eslint-parser": "^9.1.0",
     "vue-tsc": "~1.0.9"
   }
