@@ -1,0 +1,108 @@
+# vue 技巧
+
+## 如何一次绑定多个值和事件
+
+`v-bind` 和 `v-on`
+
+```html
+<!-- binding an object of attributes -->
+<div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
+
+<!-- pass down parent props in common with a child component -->
+<MyComponent v-bind="$props" />
+<!-- 当不带参数使用时，可以用于绑定一个包含了多个 attribute 名称-绑定值对的对象。 -->
+
+<!-- prop binding. "prop" must be declared in the child component. -->
+<MyComponent :prop="someThing" />
+```
+
+[vue3 文档 v-bind](https://cn.vuejs.org/api/built-in-directives.html#v-bind)
+
+v-on 还支持绑定不带参数的事件/监听器对的对象。请注意，当使用对象语法时，不支持任何修饰符。
+
+```html
+<!-- 对象语法 -->
+<button v-on="{ mousedown: doThis, mouseup: doThat }"></button>
+```
+
+[vue3 文档 v-on](https://cn.vuejs.org/api/built-in-directives.html#v-on)
+
+## 加强 prop 验证
+
+props 声明使用对象写法，必要时再使用 validator 加强验证。
+
+```js
+const props = defineProps({
+  type: {
+    type: String,
+    default: 'primary',
+    validator: value => ['primary', 'danger', 'info'].includes(value),
+  },
+})
+```
+
+## toRef 设置默认值
+
+```js
+const person = reactive({ name: 'John', age: 12 })
+const ageRef = toRef(person, 'age')
+const cityRef = toRef(person, 'city', 'GuiYang') // 提供默认值
+```
+
+> toRef 的返回值会和其第一个参数保持同步，修改其中一个，另一个受到影响。
+
+> toRef 传递给组合函数，是非常强大的用法，比如从 props 中获取某些 prop `useHttp('/hello',toRef(props,'name'))`
+
+## 暴露私有属性
+
+选项 api 中---`expose`
+
+```html
+<script>
+  export default {
+    setup() {
+      const modalIsOpen = ref(false)
+      return { modalIsOpen }
+    },
+  }
+</script>
+```
+
+通过`ref`访问 modalIsOpen 属性。
+
+```html
+<script setup>
+  const HelloWorldCom = ref()
+  onMounted(() => {
+    console.log('HelloWorldCom.value.modalIsOpen')
+    console.log(HelloWorldCom.value.modalIsOpen)
+    setTimeout(() => {
+      HelloWorldCom.value.modalIsOpen = true
+    }, 4000)
+  })
+</script>
+
+<template>
+  <HelloWorld ref="HelloWorldCom" />
+</template>
+```
+
+希望指定暴露的属性：
+
+```html
+<script>
+  export default {
+    expose: ['modalIsOpen'],
+    setup() {
+      const modalIsOpen = ref(false)
+      return { modalIsOpen }
+    },
+  }
+</script>
+```
+
+只能访问到`modalIsOpen`，其他属性访问不到。
+
+`script setup` 中 --- `defineExpose`
+
+选项 api 中，组件的属性是完全暴露的，而`script setup` 是完全封闭的，除非使用`defineExpose`暴露，否则外部访问不到。

@@ -25,6 +25,14 @@ const loading = ref(true)
 setTimeout(() => {
   loading.value = !loading.value
 }, 5000)
+const HelloWorldCom = ref()
+onMounted(() => {
+  console.log('HelloWorldCom.value.modalIsOpen')
+  console.log(HelloWorldCom.value.modalIsOpen)
+  setTimeout(() => {
+    HelloWorldCom.value.modalIsOpen = true
+  }, 4000)
+})
 </script>
 
 <template>
@@ -74,8 +82,8 @@ setTimeout(() => {
       </template>
     </UseButton> 
     <hr />
-    <HelloWorld v-if="show" v-clickOutside="clickOutside" />
-    -->
+  -->
+    <!-- <HelloWorld v-if="show" v-clickOutside="clickOutside" ref="HelloWorldCom" /> -->
     <button @click="toggle">toggle</button>
     <!-- <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
       <span slot="left">工资：</span>

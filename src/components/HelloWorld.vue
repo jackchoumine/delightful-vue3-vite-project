@@ -20,6 +20,7 @@ export default {
       },
     },
   },
+  expose: ['modalIsOpen'],
   setup() {
     // console.log('setup')
     // onBeforeMount(() => {
