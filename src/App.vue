@@ -17,6 +17,7 @@ import {
   PopperButton,
   PopperButtonHook,
   HookDemo,
+  SlottedDemo,
   // AntDesignDemos,
 } from './components'
 import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
@@ -25,19 +26,13 @@ const loading = ref(true)
 setTimeout(() => {
   loading.value = !loading.value
 }, 5000)
-const HelloWorldCom = ref()
-onMounted(() => {
-  console.log('HelloWorldCom.value.modalIsOpen')
-  console.log(HelloWorldCom.value.modalIsOpen)
-  setTimeout(() => {
-    HelloWorldCom.value.modalIsOpen = true
-  }, 4000)
-})
 </script>
 
 <template>
   <!-- eslint-disable vue/no-deprecated-slot-attribute -->
   <div>
+    <SlottedDemo />
+    <hr />
     <AntDesignDemos />
     <hr />
     <HookDemo />

@@ -106,3 +106,61 @@ const cityRef = toRef(person, 'city', 'GuiYang') // 提供默认值
 `script setup` 中 --- `defineExpose`
 
 选项 api 中，组件的属性是完全暴露的，而`script setup` 是完全封闭的，除非使用`defineExpose`暴露，否则外部访问不到。
+
+## 在子组件内部修改插槽里的代码样式
+
+> :slotted(selector) 修改插槽样式
+
+子组件
+
+```html
+<template>
+  <div class="test-slot">
+    <h3>使用:slotted 修改插槽样式</h3>
+    <slot></slot>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+  /* 修改父组件传递过来的额插槽样式 */
+  :global(.slot) {
+    background-color: red;
+  }
+</style>
+```
+
+父组件：
+
+```html
+<script setup name="Demos">
+  import TestSlotted from './TestSlotted.vue'
+</script>
+
+<template>
+  <div class="slotted-test">
+    <TestSlotted>
+      <div class="slot">测试slotted</div>
+    </TestSlotted>
+  </div>
+</template>
+
+<style scoped lang="scss">
+  .slotted-test {
+    background-color: #ccc;
+  }
+</style>
+```
+
+> 使用`:slotted` 可在子组件的作用域样式内修改插槽样式。
+
+## 在作用域内的样式暴露为全局样式
+
+```html
+<style lang="scss" scoped>
+  :global(.slot) {
+    background-color: red;
+  }
+</style>
+```
+
+> `:global` 把作用域内的样式暴露到全局。
