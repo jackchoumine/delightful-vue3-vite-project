@@ -5,7 +5,7 @@
   * @LastEditTime: 2022-11-11 09:26:41
   * @Description : 
 -->
-<script setup>
+<script setup lang="jsx">
 import {
   FileViewer,
   HelloWorld,
@@ -22,6 +22,12 @@ import {
 } from './components'
 import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
 import { testNameExport } from './components/FileViewer/FileViewer.vue'
+const SubComponent = defineComponent({
+  render() {
+    return <div style={{ backgroundColor: 'red' }}>单个文中中定义多个组件</div>
+  },
+})
+
 console.log(testNameExport)
 
 const show = ref(true)
@@ -89,6 +95,7 @@ setTimeout(() => {
     </count-to> -->
     <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
     <button type="button" @click="changePerson">修改person</button>
+    <SubComponent />
   </div>
 </template>
 

@@ -5,7 +5,7 @@
  * @LastEditTime: 2022-11-10 09:07:38
  * @Description :
  */
-import { createApp } from 'vue'
+import { createApp } from 'vue/dist/vue.esm-bundler.js'
 // @ts-ignore
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'

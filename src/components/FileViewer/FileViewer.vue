@@ -16,6 +16,7 @@
     <p ref="myP">height:{{ height }}</p>
     <h2>网络在线吗？{{ isOnline ? '在' : '不在' }}</h2>
     <div class="box">box</div>
+    <SubComponent />
     <!-- <p :ref="whenClickOutside">点到myP外部了吗？{{ isClickOutside ? '是' : '否' }}</p> -->
   </div>
 </template>
@@ -29,8 +30,15 @@ import {
   useOnClickOutsideV2,
 } from '@hooks'
 
+const SubComponent = defineComponent({
+  template: /* html */ `<div style="background-color:red">单个文中中定义多个组件</div>`,
+  // render() {
+  //   return <div style={{ backgroundColor: 'red' }}>单个文中中定义多个组件</div>
+  // },
+})
 export default defineComponent({
   name: 'FileViewer',
+  components: { SubComponent },
   props: {
     height: {
       type: Number,

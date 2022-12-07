@@ -164,3 +164,43 @@ const cityRef = toRef(person, 'city', 'GuiYang') // 提供默认值
 ```
 
 > `:global` 把作用域内的样式暴露到全局。
+
+## 在单文件组件中定义多个组件
+
+1. 使用 jsx
+
+```html
+<script setup lang="jsx">
+  const SubComponent = defineComponent({
+    render() {
+      return <div style={{ backgroundColor: 'red' }}>单个文中中定义多个组件</div>
+    },
+  })
+</script>
+
+<template>
+  <div>
+    <SubComponent />
+  </div>
+</template>
+```
+
+2. 使用内联模板
+
+```html
+<script>
+  const SubComponent = defineComponent({
+    template: /*html*/ `<div style="background-color:red">单个文中中定义多个组件</div>`,
+  })
+</script>
+```
+
+使用了构建工具，vue 默认导出的是不含运行时编译器的代码，使用了内联模板，需要导出带有运行时编译的 vue。
+
+```js
+import { createApp } from 'vue/dist/vue.esm-bundler.js' // 导出包含运行时编译器
+```
+
+> 使用`es6-string-html`可获取 template 语法高亮。
+
+推荐使用 jsx 的方式，可读性更好。
