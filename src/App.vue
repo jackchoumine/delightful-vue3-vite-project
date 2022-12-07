@@ -21,14 +21,13 @@ import {
   // AntDesignDemos,
 } from './components'
 import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
-import { testNameExport } from './components/FileViewer/FileViewer.vue'
+// import { testNameExport } from './components/FileViewer/FileViewer.vue'
+// console.log(testNameExport)
 const SubComponent = defineComponent({
   render() {
     return <div style={{ backgroundColor: 'red' }}>单个文中中定义多个组件</div>
   },
 })
-
-console.log(testNameExport)
 
 const show = ref(true)
 const loading = ref(true)

@@ -43,6 +43,7 @@ customElements.define(
 
 const app = createApp(App)
 
+app.config.performance = true
 app.use(vAuth).use(vClickOutside).use(Antd)
 app.use(ElLoading)
 // import 'element-plus/dist/index.css'
