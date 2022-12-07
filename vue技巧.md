@@ -204,3 +204,17 @@ import { createApp } from 'vue/dist/vue.esm-bundler.js' // 导出包含运行时
 > 使用`es6-string-html`可获取 template 语法高亮。
 
 推荐使用 jsx 的方式，可读性更好。
+
+## 二次封装如何处理插槽
+
+```html
+<template>
+  <div>
+    <ThirdPartyComponent>
+      <template v-for="(_,name) in $slots" #[name]="slotProps">
+        <slot :name="name" v-bind="slotProps??{}"></slot>
+      </template>
+    </ThirdPartyComponent>
+  </div>
+</template>
+```
