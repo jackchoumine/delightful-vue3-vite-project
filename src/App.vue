@@ -21,6 +21,9 @@ import {
   // AntDesignDemos,
 } from './components'
 import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
+import { testNameExport } from './components/FileViewer/FileViewer.vue'
+console.log(testNameExport)
+
 const show = ref(true)
 const loading = ref(true)
 setTimeout(() => {

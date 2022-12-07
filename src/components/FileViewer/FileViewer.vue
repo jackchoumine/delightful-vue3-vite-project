@@ -86,6 +86,7 @@ export default defineComponent({
     }
   },
 })
+export const testNameExport = '从组件中导出'
 </script>
 
 <style scoped>
