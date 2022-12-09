@@ -18,6 +18,9 @@
     <div class="box">box</div>
     <SubComponent />
     <!-- <p :ref="whenClickOutside">点到myP外部了吗？{{ isClickOutside ? '是' : '否' }}</p> -->
+    <p>
+      <img :src="avatar" />
+    </p>
   </div>
 </template>
 
@@ -28,7 +31,9 @@ import {
   useStorage,
   useNetworkStatus,
   useOnClickOutsideV2,
+  useTitle,
 } from '@hooks'
+import { useFetch } from '@vueuse/core'
 
 const SubComponent = defineComponent({
   template: /* html */ `<div style="background-color:red">单个文中中定义多个组件</div>`,
@@ -50,6 +55,18 @@ export default defineComponent({
     const { value, remove } = useLocalStorage('jack', { name: 'jack' })
     const { width, height } = useWindowResize()
     const [person, setItem] = useStorage('jack')
+    const hello = ref('hello')
+    const title = computed(() => {
+      return hello.value + Math.random() * 10
+    })
+    useTitle(title)
+    setTimeout(() => {
+      hello.value = 'Hello'
+    }, 2000)
+    const { data } = useFetch('https://api.github.com/users/jackchoumine').json()
+    const avatar = computed(() => data.avatar_url)
+    // console.log(isRef(title))
+    title.value = '修改hook的返回值'
     // console.log('person: ')
     // console.log(person)
     setItem({ name: 'reactive session storage' })
@@ -89,6 +106,7 @@ export default defineComponent({
       person,
       myP: pDOM,
       style,
+      avatar,
       // whenClickOutside,
       // isClickOutside,
     }
