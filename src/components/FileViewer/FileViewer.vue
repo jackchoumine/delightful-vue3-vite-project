@@ -21,10 +21,11 @@
     <p>
       <img :src="avatar" />
     </p>
+    <p>userName:{{ user?.name }}</p>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   useLocalStorage,
   useWindowResize,
@@ -32,9 +33,11 @@ import {
   useNetworkStatus,
   useOnClickOutsideV2,
   useTitle,
+  // @ts-ignore
 } from '@hooks'
 import { useFetch } from '@vueuse/core'
-
+// @ts-ignore
+import { USER_KEY } from '@/utils/injectionKey'
 const SubComponent = defineComponent({
   template: /* html */ `<div style="background-color:red">单个文中中定义多个组件</div>`,
   // render() {
@@ -52,6 +55,7 @@ export default defineComponent({
   },
   setup(props) {
     console.log(props.height)
+    const user = inject(USER_KEY)
     const { value, remove } = useLocalStorage('jack', { name: 'jack' })
     const { width, height } = useWindowResize()
     const [person, setItem] = useStorage('jack')
@@ -107,6 +111,7 @@ export default defineComponent({
       myP: pDOM,
       style,
       avatar,
+      user,
       // whenClickOutside,
       // isClickOutside,
     }

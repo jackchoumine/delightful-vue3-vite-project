@@ -5,7 +5,7 @@
   * @LastEditTime: 2022-11-11 09:26:41
   * @Description : 
 -->
-<script setup lang="jsx">
+<script setup lang="tsx">
 import {
   FileViewer,
   HelloWorld,
@@ -21,6 +21,7 @@ import {
   // AntDesignDemos,
 } from './components'
 import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
+import { USER_KEY, User } from './utils/injectionKey'
 // import { testNameExport } from './components/FileViewer/FileViewer.vue'
 // console.log(testNameExport)
 const SubComponent = defineComponent({
@@ -34,6 +35,11 @@ const loading = ref(true)
 setTimeout(() => {
   loading.value = !loading.value
 }, 5000)
+const user = reactive<User>({
+  id: 1,
+  name: 'JackChou',
+})
+provide(USER_KEY, { id: 1234, name: 'JackChou' })
 </script>
 
 <template>
@@ -87,13 +93,13 @@ setTimeout(() => {
     <hr />
   -->
     <!-- <HelloWorld v-if="show" v-clickOutside="clickOutside" ref="HelloWorldCom" /> -->
-    <button @click="toggle">toggle</button>
+    <!-- <button @click="toggle">toggle</button> -->
     <!-- <count-to v-if="show" :end-value="endValue" :precision="3" @on-end="updated">
       <span slot="left">工资：</span>
       <span slot="right">$</span>
     </count-to> -->
-    <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
-    <button type="button" @click="changePerson">修改person</button>
+    <!-- <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
+    <button type="button" @click="changePerson">修改person</button> -->
     <SubComponent />
   </div>
 </template>
