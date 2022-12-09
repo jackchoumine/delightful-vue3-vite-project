@@ -67,3 +67,11 @@ export const USER_KEY: InjectionKey<User> = Symbol('User')
 <!-- TODO -->
 
 > 从这点可看出，vue 对类型支持，还是不够好。
+
+## 参考
+
+[The new Provide and Inject in Vue 3](https://vuedose.tips/the-new-provide-inject-in-vue-3)
+
+[provide and inject](https://logaretm.com/blog/making-the-most-out-of-vuejs-injections/)
+
+[provide and inject](https://logaretm.com/blog/type-safe-provide-inject/)
