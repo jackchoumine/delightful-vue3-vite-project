@@ -27,6 +27,7 @@
     "@popperjs/core": "~2.11.6",
     "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-typescript": "^11.0.2",
+    "@vueuse/core": "9.6.0",
     "dayjs": "1.11.6",
     "echarts-web-components": "~0.0.3",
     "element-plus": "^2.2.19",
