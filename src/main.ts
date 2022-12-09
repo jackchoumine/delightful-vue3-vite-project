@@ -6,6 +6,7 @@
  * @Description :
  */
 import { createApp } from 'vue/dist/vue.esm-bundler.js'
+import router from './router'
 // @ts-ignore
 // import Antd from 'ant-design-vue'
 // import 'ant-design-vue/dist/antd.css'
@@ -45,7 +46,7 @@ const app = createApp(App)
 
 app.config.performance = true
 app.use(vAuth).use(vClickOutside) // .use(Antd)
-app.use(ElLoading)
+app.use(ElLoading).use(router)
 // import 'element-plus/dist/index.css'
 // import ElementPlus from 'element-plus'
 // import('element-plus').then(({ default: ElementPlus }) => {
