@@ -64,7 +64,7 @@ export default defineComponent({
       hello.value = 'Hello'
     }, 2000)
     const { data } = useFetch('https://api.github.com/users/jackchoumine').json()
-    const avatar = computed(() => data.avatar_url)
+    const avatar = computed(() => data.value?.avatar_url)
     // console.log(isRef(title))
     title.value = '修改hook的返回值'
     // console.log('person: ')
