@@ -7,8 +7,8 @@
  */
 import { createApp } from 'vue/dist/vue.esm-bundler.js'
 // @ts-ignore
-import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+// import Antd from 'ant-design-vue'
+// import 'ant-design-vue/dist/antd.css'
 import App from './App.vue'
 import { vAuth, vClickOutside } from './plugins'
 // 导入 haunted 创建的 web component
@@ -44,7 +44,7 @@ customElements.define(
 const app = createApp(App)
 
 app.config.performance = true
-app.use(vAuth).use(vClickOutside).use(Antd)
+app.use(vAuth).use(vClickOutside) // .use(Antd)
 app.use(ElLoading)
 // import 'element-plus/dist/index.css'
 // import ElementPlus from 'element-plus'

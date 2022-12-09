@@ -19,3 +19,4 @@ export { default as PopperButtonHook } from './HookComponent/PopperButtonHook.vu
 export { default as HookDemo } from './HookTest/HookDemo.vue'
 export { AntDesignDemos } from './AntDesignVue'
 export * from './HelloSlotted'
+export { default as MyInput } from './MyInput/MyInput.vue'

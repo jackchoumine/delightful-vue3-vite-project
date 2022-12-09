@@ -18,6 +18,7 @@ import {
   PopperButtonHook,
   HookDemo,
   SlottedDemo,
+  MyInput,
   // AntDesignDemos,
 } from './components'
 import AntDesignDemos from './components/AntDesignVue/AntDemos.vue'
@@ -40,11 +41,15 @@ const user = reactive<User>({
   name: 'JackChou',
 })
 provide(USER_KEY, { id: 1234, name: 'JackChou' })
+const myInput = ref('hello')
 </script>
 
 <template>
   <!-- eslint-disable vue/no-deprecated-slot-attribute -->
   <div>
+    <MyInput v-model="myInput" />
+    <p>{{ myInput }}</p>
+    <hr />
     <SlottedDemo />
     <hr />
     <AntDesignDemos />
