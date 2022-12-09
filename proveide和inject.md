@@ -62,6 +62,8 @@ export type User = { id: number; name: string }
 export const USER_KEY: InjectionKey<User> = Symbol('User')
 ```
 
-> inject 之后，还是提示类型为 unknown，没生效。
+> inject 之后，还是提示类型为 unknown，很奇怪。
 
 <!-- TODO -->
+
+> 从这点可看出，vue 对类型支持，还是不够好。
