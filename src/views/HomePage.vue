@@ -7,9 +7,9 @@
 -->
 <script setup lang="tsx">
 import { HelloWorld, WatchDemo, SlottedDemo } from '../components'
-import { USER_KEY, User } from '../utils/injectionKey'
-// import { testNameExport } from './components/FileViewer/FileViewer.vue'
-// console.log(testNameExport)
+// NOTE 不要使用路径别名，否则不会类型不生效
+import { USER_KEY } from '../utils/injectionKey'
+
 const SubComponent = defineComponent({
   render() {
     return <div style={{ backgroundColor: 'red' }}>单个文中中定义多个组件</div>
@@ -21,11 +21,12 @@ setTimeout(() => {
   loading.value = !loading.value
 }, 5000)
 
-provide(USER_KEY, { id: 1234, name: 'JackChou' })
+const user = inject(USER_KEY)
 </script>
 
 <template>
   <div>
+    <p>userName:{{ user?.name }}</p>
     <SlottedDemo />
     <hr />
     <WatchDemo />
