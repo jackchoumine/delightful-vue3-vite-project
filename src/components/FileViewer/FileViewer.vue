@@ -70,7 +70,7 @@ export default defineComponent({
     const { data } = useFetch('https://api.github.com/users/jackchoumine').json()
     const avatar = computed(() => data.value?.avatar_url)
     // console.log(isRef(title))
-    title.value = '修改hook的返回值'
+    // title.value = '修改hook的返回值'
     // console.log('person: ')
     // console.log(person)
     setItem({ name: 'reactive session storage' })
