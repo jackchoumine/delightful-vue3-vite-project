@@ -7,7 +7,7 @@
 -->
 <template>
   <div>
-    <h1>watch ref</h1>
+    <h1>watch</h1>
     <WatchRef />
     <WatchReactive />
   </div>
