@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { routes } from './router'
 </script>
 
 <template>
   <header>
     <QTabs no-caps class="bg-primary text-white shadow-2">
-      <QRouteTab label="主页" to="/" exact />
-      <QRouteTab label="About" to="/about" exact />
+      <QRouteTab
+        v-for="item in routes"
+        :label="item.name"
+        :to="item.path"
+        :key="item.path"
+        exact />
     </QTabs>
   </header>
   <RouterView />
