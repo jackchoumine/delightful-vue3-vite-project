@@ -1,7 +1,6 @@
-<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <template>
   <div>
-    <h1>测试 lit component</h1>
+    <h4>测试 lit component</h4>
     <hello-lit name="hello-lit" :array="arrayT" @my-click="myClick"></hello-lit>
     <!-- Lit wc 没问题 -->
     <my-element :count="count" :array="array" ref="my" @my-click="myClick"></my-element>

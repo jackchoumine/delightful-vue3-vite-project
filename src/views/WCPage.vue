@@ -1,5 +1,5 @@
 <script setup lang="ts" name="WCPage">
-import { TestStencilWC, TestHaunted } from '../components'
+import { TestStencilWC, TestHaunted, TestLit } from '../components'
 </script>
 
 <template>
@@ -7,6 +7,8 @@ import { TestStencilWC, TestHaunted } from '../components'
     <TestHaunted />
     <hr />
     <TestStencilWC />
+    <hr />
+    <TestLit />
   </div>
 </template>
 

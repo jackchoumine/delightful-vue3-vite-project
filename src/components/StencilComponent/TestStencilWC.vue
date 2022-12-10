@@ -6,20 +6,22 @@
  * @Description : 
 -->
 <template>
-  <!-- eslint-disable vue/no-parsing-error  vue/no-deprecated-slot-attribute-->
   <div>
     <hello-stencil
       :key="key"
       ref="hs"
       :name="name"
-      :attr-array="attrArray"
+      :attr-array.prop="attrArray"
       :array.prop="array"
       :person.prop="person"
-      :attr-person="attrPerson"
+      :attr-person.prop="attrPerson"
       @my-click="myClick"
       @myClick="myClick"
-      @myclick="myClick"></hello-stencil>
-    <my-rating :max-value="10" :person="person" :personArray="[person]"></my-rating>
+      @myclick="myClick">
+    </hello-stencil>
+    <hr />
+    <my-rating :max-value="10" :person.prop="person" :personArray.prop="[person]">
+    </my-rating>
     <button type="button" @click="changePerson">修改person</button>
     <hr />
     <count-to v-if="show" :end-value="endValue" :precision="3">
