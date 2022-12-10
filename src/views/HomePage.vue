@@ -26,7 +26,9 @@ const user = inject(USER_KEY)
 
 <template>
   <div>
+    <h3>provide inject</h3>
     <p>userName:{{ user?.name }}</p>
+    <hr />
     <SlottedDemo />
     <hr />
     <WatchDemo />

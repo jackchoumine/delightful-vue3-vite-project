@@ -64,7 +64,9 @@ export const USER_KEY: InjectionKey<User> = Symbol('User')
 
 > inject 之后，还是提示类型为 unknown，很奇怪。
 
-<!-- TODO -->
+问题：使用了路径别名导入模块，编辑器解析不到，其他使用别名导入的模块，也存在这个问题。
+
+解决办法 1： 不使用路径别名。
 
 > 从这点可看出，vue 对类型支持，还是不够好。
 
