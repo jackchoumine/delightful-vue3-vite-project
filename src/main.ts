@@ -11,10 +11,10 @@ import quasarLang from 'quasar/lang/zh-CN'
 import quasarIconSet from 'quasar/icon-set/svg-material-icons'
 // Import icon libraries
 import '@quasar/extras/material-icons/material-icons.css'
-
 // Import Quasar css
 import 'quasar/dist/quasar.css'
 
+import './assets/styles/global.scss'
 import router from './router'
 // @ts-ignore
 // import Antd from 'ant-design-vue'
