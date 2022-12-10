@@ -23,10 +23,12 @@ function Counter(props) {
     this.dispatchEvent(
       new CustomEvent('hello', {
         detail: { name: 'John' },
-      })
+      }),
     )
     setCount(count + 1)
   }
+  const { testArray } = props
+  console.table(testArray)
   console.log('render')
   return html/* html */ `
     <h2>haunted 测试</h2>
@@ -35,7 +37,7 @@ function Counter(props) {
     <hr />
     <h4>测试数组property</h4>
     <ul>
-      ${props.testArray?.map(item => html` <li>${item.name}</li> `)}
+      ${testArray?.map(item => html` <li>${item.name}</li> `)}
     </ul>
     <h4>测试对象property</h4>
     <p>name:${props.obj?.name}</p>
