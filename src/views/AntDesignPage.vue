@@ -3,7 +3,7 @@ import { AntDesignDemos } from '../components'
 </script>
 
 <template>
-  <div class="vue-component">
+  <div class="page-component">
     <AntDesignDemos />
   </div>
 </template>

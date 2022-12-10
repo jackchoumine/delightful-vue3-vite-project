@@ -3,7 +3,7 @@ import { TestStencilWC, TestHaunted } from '../components'
 </script>
 
 <template>
-  <div class="vue-component">
+  <div class="page-component">
     <TestHaunted />
     <hr />
     <TestStencilWC />

@@ -25,7 +25,7 @@ const user = inject(USER_KEY)
 </script>
 
 <template>
-  <div>
+  <div class="page-component">
     <h3>provide inject</h3>
     <p>userName:{{ user?.name }}</p>
     <hr />
@@ -45,4 +45,10 @@ const user = inject(USER_KEY)
   </div>
 </template>
 
-<style scoped></style>
+<style>
+.page-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>

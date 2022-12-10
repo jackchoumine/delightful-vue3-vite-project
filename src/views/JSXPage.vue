@@ -3,7 +3,7 @@ import { Button, UseButton } from '../components'
 </script>
 
 <template>
-  <div class="vue-component">
+  <div class="page-component">
     <h2>测试jsx 中使用插槽</h2>
     <Button>
       <template #left>

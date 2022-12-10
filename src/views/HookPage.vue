@@ -10,7 +10,7 @@ const myInput = ref('hello')
 </script>
 
 <template>
-  <div class="vue-component">
+  <div class="page-component">
     <MyInput v-model="myInput" />
     <p>{{ myInput }}</p>
     <hr />
