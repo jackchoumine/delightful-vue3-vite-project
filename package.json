@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@popperjs/core": "~2.11.6",
+    "@quasar/extras": "1.15.7",
     "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "@vueuse/core": "9.6.0",
@@ -34,11 +35,13 @@
     "haunted": "^5.0.0",
     "jack-web-ui": "~0.0.8",
     "lit": "~2.4.1",
+    "quasar": "2.10.2",
     "video.js": "^7.20.3",
     "vue": "^3.2.41",
     "vue-router": "4.1.6"
   },
   "devDependencies": {
+    "@quasar/vite-plugin": "1.2.3",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "@vitejs/plugin-basic-ssl": "~0.1.2",

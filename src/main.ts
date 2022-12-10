@@ -6,6 +6,15 @@
  * @Description :
  */
 import { createApp } from 'vue/dist/vue.esm-bundler.js'
+import { Quasar } from 'quasar'
+import quasarLang from 'quasar/lang/zh-CN'
+import quasarIconSet from 'quasar/icon-set/svg-material-icons'
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
+
+// Import Quasar css
+import 'quasar/dist/quasar.css'
+
 import router from './router'
 // @ts-ignore
 // import Antd from 'ant-design-vue'
@@ -46,7 +55,23 @@ const app = createApp(App)
 
 app.config.performance = true
 app.use(vAuth).use(vClickOutside) // .use(Antd)
-app.use(ElLoading).use(router)
+app.use(ElLoading).use(router).use(Quasar, {
+  plugins: {}, // import Quasar plugins and add here
+  lang: quasarLang,
+  iconSet: quasarIconSet,
+  /*
+  config: {
+    brand: {
+      // primary: '#e46262',
+      // ... or all other brand colors
+    },
+    notify: {...}, // default set of options for Notify Quasar plugin
+    loading: {...}, // default set of options for Loading Quasar plugin
+    loadingBar: { ... }, // settings for LoadingBar Quasar plugin
+    // ..and many more (check Installation card on each Quasar component/directive/plugin)
+  }
+  */
+})
 // import 'element-plus/dist/index.css'
 // import ElementPlus from 'element-plus'
 // import('element-plus').then(({ default: ElementPlus }) => {
