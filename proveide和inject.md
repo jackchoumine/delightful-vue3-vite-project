@@ -62,13 +62,35 @@ export type User = { id: number; name: string }
 export const USER_KEY: InjectionKey<User> = Symbol('User')
 ```
 
+> 需要类型支持，又得引入新的接口，从这点可看出，vue 对类型支持，还是不够好。
+
 > inject 之后，还是提示类型为 unknown，很奇怪。
 
 问题：使用了路径别名导入模块，编辑器解析不到，其他使用别名导入的模块，也存在这个问题。
 
 解决办法 1： 不使用路径别名。
 
-> 从这点可看出，vue 对类型支持，还是不够好。
+解决办法 2：配置正确的路径别名。
+
+```js
+{
+  "baseUrl": "src",
+  "paths": {
+    // /* 配路径
+    "@/*": ["./*"],
+    // 没有 /* 配置具体的文件
+    "#c": ["./components/index"]
+  }
+}
+```
+
+配置正确，编辑器会提示：
+
+![](./QQ%E6%88%AA%E5%9B%BE20221210175356.png)
+
+且能点击导出，能正确跳转目录。
+
+> 注意 vite 路径别名和 tsconfig 路径别名的对应关系。
 
 ## 参考
 

@@ -19,6 +19,7 @@
 
 <script lang="ts" setup>
 import { createPopper } from '@popperjs/core'
+import type { Placement } from '@popperjs/core'
 const isOver = ref(false)
 function onMouseover() {
   isOver.value = true
@@ -29,7 +30,7 @@ function onMouseout() {
 const btn = ref()
 const tooltip = ref()
 
-const placement = ref('right')
+const placement = ref<Placement>('right')
 
 watchEffect(
   () => {

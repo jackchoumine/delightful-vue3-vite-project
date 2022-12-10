@@ -33,7 +33,7 @@ import {
   useNetworkStatus,
   useOnClickOutsideV2,
   useTitle,
-} from '../../hooks'
+} from '@/hooks'
 import { useFetch } from '@vueuse/core'
 
 const SubComponent = defineComponent({

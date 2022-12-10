@@ -15,9 +15,8 @@
     "skipLibCheck": true,
     "baseUrl": "src",
     "paths": {
-      "@": ["src/*"],
-      "@c": ["src/components/*"],
-      "@hooks": ["src/hooks/*"]
+      "@/*": ["./*"],
+      "#c": ["./components/index"]
     }
   },
   "include": [

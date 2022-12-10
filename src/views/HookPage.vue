@@ -1,11 +1,5 @@
 <script setup lang="ts" name="HookPage">
-import {
-  FileViewer,
-  HookDemo,
-  PopperButton,
-  PopperButtonHook,
-  MyInput,
-} from '../components'
+import { FileViewer, HookDemo, PopperButton, PopperButtonHook, MyInput } from '#c'
 const myInput = ref('hello')
 </script>
 
