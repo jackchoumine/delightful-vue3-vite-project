@@ -7,13 +7,16 @@
 -->
 <template>
   <div>
+    <h4>useAdd</h4>
+    <p>c:{{ c }}</p>
+    <button type="button" @click="b = 100">修改b</button>
+    <hr />
+    <h4>useHttpGet</h4>
     <input type="text" v-model="input" />
     <ul>
       <li v-for="(item, index) in list" :key="index">{{ item.name }}</li>
     </ul>
     <p>{{ input }}</p>
-    <p>c:{{ c }}</p>
-    <button type="button" @click="b = 100">修改b</button>
   </div>
 </template>
 

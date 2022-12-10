@@ -7,14 +7,15 @@
 -->
 <template>
   <div :style="style">
+    <h4>useStorage</h4>
     <div>file viewer</div>
     <p>{{ jack?.name }}</p>
     <p>{{ person?.name }}</p>
     <button @click="remove">删除</button>
-    <h2>useWindowResize</h2>
+    <h4>useWindowResize</h4>
     <p>width:{{ width }}</p>
     <p ref="myP">height:{{ height }}</p>
-    <h2>网络在线吗？{{ isOnline ? '在' : '不在' }}</h2>
+    <h4>useNetworkStatus,网络在线吗？{{ isOnline ? '在' : '不在' }}</h4>
     <div class="box">box</div>
     <SubComponent />
     <!-- <p :ref="whenClickOutside">点到myP外部了吗？{{ isClickOutside ? '是' : '否' }}</p> -->

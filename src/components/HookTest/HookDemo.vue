@@ -7,9 +7,13 @@
 -->
 <template>
   <div>
-    <UseMouseFollower />
     <TestHook />
+    <hr />
+    <h4>useMouse</h4>
+    <UseMouseFollower />
     <!-- <VideoPlayer /> -->
+    <hr />
+    <h4>useContext</h4>
     <Modal>
       <ModalHeader>modal1</ModalHeader>
     </Modal>

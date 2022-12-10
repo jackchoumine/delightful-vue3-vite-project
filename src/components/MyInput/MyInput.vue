@@ -10,6 +10,7 @@ const value = useVModel(props, 'modelValue')
 </script>
 
 <template>
+  <h4>useVModel</h4>
   <input type="text" v-model="value" />
 </template>
 

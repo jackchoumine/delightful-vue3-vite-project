@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>hook 与第三方库</h1>
     <button
       ref="btn"
       @mouseover="onMouseover"
@@ -41,6 +40,6 @@ watchEffect(
   },
   {
     flush: 'post',
-  }
+  },
 )
 </script>

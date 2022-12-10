@@ -11,11 +11,12 @@ const myInput = ref('hello')
 
 <template>
   <div class="page-component">
+    <HookDemo />
     <MyInput v-model="myInput" />
     <p>{{ myInput }}</p>
     <hr />
     <FileViewer />
-    <HookDemo />
+    <h4>usePopper -- hook 与第三方库</h4>
     <PopperButtonHook />
     <PopperButton />
   </div>
