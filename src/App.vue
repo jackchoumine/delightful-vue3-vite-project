@@ -22,6 +22,9 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
+.q-tabs {
+  min-width: 100vw;
+}
 
 @media (min-width: 1024px) {
   header {
