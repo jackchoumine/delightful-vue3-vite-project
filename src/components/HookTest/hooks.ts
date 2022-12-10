@@ -20,7 +20,7 @@ export function useHttpGet(key: MaybeRef<string>) {
         list.value = res
       })
     },
-    { immediate: true }
+    { immediate: true },
   )
 
   return { list }
@@ -43,16 +43,4 @@ export function useAdd(a: MaybeRef<number>, b: MaybeRef<number>) {
 
 function log() {
   console.log('useAdd')
-}
-
-export function useModel(props, name: string) {
-  const emit = getCurrentInstance().emit
-  return computed({
-    get() {
-      return props[name]
-    },
-    set(value) {
-      emit(`update:${name}`, value)
-    },
-  })
 }
