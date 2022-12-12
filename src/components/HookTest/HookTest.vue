@@ -17,11 +17,20 @@
       <li v-for="(item, index) in list" :key="index">{{ item.name }}</li>
     </ul>
     <p>{{ input }}</p>
+    <h4>购物车</h4>
+    <ul>
+      <li v-for="(item, index) in items" :key="index">
+        <button @click="() => removeCart(item.id)">-</button> {{ item.name }} --
+        {{ item.number }}
+        <button @click="() => addCart(item)">+</button>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import { useHttpGet, useAdd } from './hooks'
+import useCart from './useCart'
 import './testUseAdd'
 export default {
   setup() {
@@ -30,7 +39,8 @@ export default {
     const a = 1
     const b = ref(10)
     const c = useAdd(a, b)
-    return { b, c, list, input }
+    const { items, removeCart, addCart } = useCart()
+    return { b, c, list, input, items, removeCart, addCart }
   },
 }
 </script>
