@@ -7,6 +7,9 @@
 -->
 <template>
   <div>
+    <h3>在条件语句下使用组合函数</h3>
+    <ContactList />
+    <ContactList searchable />
     <h3>使用hook共享状态</h3>
     <h4>书本列表</h4>
     <ul>
@@ -42,6 +45,7 @@
 import TestHook from './HookTest.vue'
 import VideoPlayer from '../VideoPlayer/VideoPlayer.vue'
 import UseMouseFollower from './UseMouseDemo.vue'
+import ContactList from './ContactList.vue'
 import { Modal, ModalHeader } from './Modal'
 import useCart from './useCart'
 const books = ref([
