@@ -27,6 +27,11 @@ export const routes = [
     component: () => import('../views/JSXPage.vue'),
   },
   {
+    path: '/recursion',
+    name: '递归',
+    component: () => import('../views/RecursionPage.vue'),
+  },
+  {
     path: '/about',
     name: 'about',
     component: () => import('../views/AboutPage.vue'),
