@@ -1,4 +1,3 @@
-import { es } from 'element-plus/es/locale'
 import type { DirectiveBinding } from 'vue'
 
 function title(el, binding: DirectiveBinding) {
