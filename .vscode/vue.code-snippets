@@ -28,7 +28,7 @@
     "description": "vue3模板",
     "body": [
       "",
-      "<script setup lang=\"tsx\" name=\"${TM_FILENAME_BASE}\">",
+      "<script setup lang=\"tsx\">",
       "import { ref } from 'vue';",
       "</script>",
       "",
