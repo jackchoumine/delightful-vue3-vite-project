@@ -9,7 +9,7 @@ import { copyText } from '@/utils'
  * <div v-copy="value">hello</div>
  */
 const copy: Directive = {
-  mounted(el: HTMLElement, binding: DirectiveBinding) {
+  mounted(el: HTMLElement, binding: DirectiveBinding<string>) {
     const { value = '' } = binding
     const text = el.textContent.trim()
     el.dataset.copyData = value || text // 没有值, 复制节点文本
@@ -21,7 +21,7 @@ const copy: Directive = {
     // @ts-ignore
     el.addEventListener('click', el.onClick, false)
   },
-  updated(el: HTMLElement, binding: DirectiveBinding) {
+  updated(el: HTMLElement, binding: DirectiveBinding<string>) {
     el.dataset.copyData = binding.value
   },
   beforeUnmount(el) {

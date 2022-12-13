@@ -1,6 +1,6 @@
 import type { DirectiveBinding } from 'vue'
 
-function title(el: HTMLElement, binding: DirectiveBinding) {
+function title(el: HTMLElement, binding: DirectiveBinding<string | Function>) {
   const { value } = binding
   if (value) {
     if (typeof value === 'string') {

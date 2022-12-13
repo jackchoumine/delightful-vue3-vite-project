@@ -15,7 +15,7 @@ const $auth = function (key = '') {
  * // 没有传递 key，啥都不做
  * <button v-auth>无权限，按钮被删除</button>
  */
-const auth = (el: HTMLElement, binding: DirectiveBinding) => {
+const auth = (el: HTMLElement, binding: DirectiveBinding<string>) => {
   const { value: key = '', arg = 'show' } = binding
   if (key && !$auth(key)) {
     // 1. 无权限时只是禁用，用户可以编辑页面启用，且可出发事件
