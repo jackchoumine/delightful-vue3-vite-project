@@ -9,21 +9,20 @@ import { copyText } from '@/utils'
  * <div v-copy="value">hello</div>
  */
 const copy: Directive = {
-  mounted(el, binding: DirectiveBinding) {
-    const { value = false } = binding
+  mounted(el: HTMLElement, binding: DirectiveBinding) {
+    const { value = '' } = binding
     const text = el.textContent.trim()
-    if (!value) {
-      // 没有值, 复制节点文本
-      el.onClick = () => {
-        copyText(text)
-      }
-    } else {
-      // 复制指定传入的值
-      el.onClick = () => {
-        copyText(value)
-      }
+    el.dataset.copyData = value || text // 没有值, 复制节点文本
+    // @ts-ignore
+    el.onClick = function () {
+      const data = el.dataset.copyData
+      copyText(data)
     }
+    // @ts-ignore
     el.addEventListener('click', el.onClick, false)
+  },
+  updated(el: HTMLElement, binding: DirectiveBinding) {
+    el.dataset.copyData = binding.value
   },
   beforeUnmount(el) {
     el.removeEventListener('click', el.onClick)

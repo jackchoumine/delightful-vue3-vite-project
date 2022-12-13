@@ -54,8 +54,8 @@ export default {
 </script>
 
 <template>
-  <!-- v-clickOutside v-copy v-title -->
-  <div class="hello-world">
+  <!-- v-clickOutside v-title -->
+  <div class="hello-world" v-copy="'核力量'">
     <input v-focus />
     <br />
     <button v-auth:disabled="'li'" class="button">无权限禁用</button>
