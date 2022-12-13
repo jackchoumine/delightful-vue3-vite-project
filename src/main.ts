@@ -20,7 +20,7 @@ import router from './router'
 // import Antd from 'ant-design-vue'
 // import 'ant-design-vue/dist/antd.css'
 import App from './App.vue'
-import { vAuth, vClickOutside } from './plugins'
+import globalDirectives from './directives'
 // 导入 haunted 创建的 web component
 import './components/HauntedComponent/haunt-counter'
 
@@ -54,7 +54,7 @@ customElements.define(
 const app = createApp(App)
 
 app.config.performance = true
-app.use(vAuth).use(vClickOutside) // .use(Antd)
+app.use(globalDirectives) // .use(vAuth) //.use(vClickOutside) // .use(Antd)
 app.use(ElLoading).use(router).use(Quasar, {
   plugins: {}, // import Quasar plugins and add here
   lang: quasarLang,
