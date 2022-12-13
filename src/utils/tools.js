@@ -1,3 +1,6 @@
+import { ElMessage } from 'element-plus'
+import 'element-plus/es/components/message/style/index'
+
 export function copyToClipboard(text) {
   const input = document.createElement('input')
   input.setAttribute('value', text)
@@ -8,10 +11,14 @@ export function copyToClipboard(text) {
   return result
 }
 
-export function copyText(data = '', success = () => undefined, fail = () => undefined) {
+export function copyText(
+  data = '',
+  success = () => ElMessage.success('复制成功'),
+  fail = () => ElMessage.error('复制失败'),
+) {
   const clipboard = navigator.clipboard
   if (clipboard) {
-    clipboard.write(data).then(success).catch(fail)
+    clipboard.writeText(data).then(success).catch(fail)
     return true
   }
   // NOTE 使用 input 难以调整复制文本的格式，比如换行

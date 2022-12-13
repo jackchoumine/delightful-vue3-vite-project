@@ -54,7 +54,7 @@ export default {
 </script>
 
 <template>
-  <div class="hello-world" v-clickOutside>
+  <div class="hello-world" v-clickOutside v-copy>
     <input v-focus />
     <button v-auth:disabled="'li'" class="button">无权限禁用</button>
     <button v-auth="'li'">无权限删除</button>
