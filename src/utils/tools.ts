@@ -37,7 +37,7 @@ export function copyText(
   return result
 }
 
-export type Params = {
+export type WaterMakerParams = {
   text: string
   node: HTMLElement
   font?: string
@@ -55,7 +55,7 @@ export function addWaterMarker({
   node,
   font = '16px Microsoft JhengHei',
   textColor = 'rgba(180, 180, 180, 0.5)',
-}: Params) {
+}: WaterMakerParams) {
   // 水印文字，父元素，字体，文字颜色
   const can: HTMLCanvasElement = document.createElement('canvas')
   node.appendChild(can)
