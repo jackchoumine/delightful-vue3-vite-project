@@ -56,6 +56,7 @@ export default defineComponent({
     const { value, remove } = useLocalStorage('jack', JSON.stringify({ name: 'jack' }))
     const { width, height } = useWindowResize()
     const [person, setItem] = useStorage('jack')
+    setItem({ name: 'reactive session storage' })
     const hello = ref('hello')
     const title = computed(() => {
       return hello.value + Math.random() * 10
@@ -70,11 +71,8 @@ export default defineComponent({
     // title.value = '修改hook的返回值'
     // console.log('person: ')
     // console.log(person)
-    setItem({ name: 'reactive session storage' })
-
     const pDOM = ref(null)
-
-    // NOTE lifehook 不能嵌套调用
+    // NOTE lifeHook 不能嵌套调用
     // onMounted(() => {
     //   console.log('onMounted 1')
     //   onMounted(() => {
