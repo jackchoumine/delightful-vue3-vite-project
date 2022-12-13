@@ -7,8 +7,6 @@
       :chartTitle.prop="chartTitle"
       :y-name.prop="yName"></e-line-chart>
     <button type="button" @click="changeName">修改参数</button>
-    <!-- Lit wc 没问题 -->
-    <my-element :count="count" :array="array" ref="myElement"></my-element>
   </div>
 </template>
 
