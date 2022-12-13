@@ -2,7 +2,7 @@
 import { useSearchContactList, Item } from './useSearchContact'
 
 type Props = {
-  searchable: boolean
+  searchable?: boolean
 }
 const props = withDefaults(defineProps<Props>(), { searchable: false })
 
