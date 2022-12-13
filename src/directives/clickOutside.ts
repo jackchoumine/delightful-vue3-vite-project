@@ -1,4 +1,4 @@
-import type { App, Directive } from 'vue'
+import type { Directive } from 'vue'
 
 const clickOutside: Directive = {
   //   app.directive('clickOutside', {
