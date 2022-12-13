@@ -54,20 +54,25 @@ export default {
 </script>
 
 <template>
-  <div class="hello-world" v-clickOutside v-copy v-title>
+  <!-- v-clickOutside v-copy v-title -->
+  <div class="hello-world">
     <input v-focus />
+    <br />
     <button v-auth:disabled="'li'" class="button">无权限禁用</button>
+    <br />
     <button v-auth="'li'">无权限删除</button>
+    <br />
     <button @click="openModal">Open Modal</button>
     <br />
-    <Modal :isOpen="modalIsOpen" @close-modal="onModalClose">My Modal !!!!</Modal>
+    <ElButton type="primary" v-auth="'hello'">el按钮</ElButton>
+    <Modal :isOpen="modalIsOpen" @close-modal="onModalClose"> My Modal !!!! </Modal>
   </div>
 </template>
 
 <style>
 .hello-world {
-  width: 100px;
-  height: 100px;
+  /* width: 100px; */
+  /* height: 100px; */
   background-color: aliceblue;
 }
 

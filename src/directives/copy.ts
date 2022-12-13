@@ -1,6 +1,13 @@
 import type { Directive, DirectiveBinding } from 'vue'
 import { copyText } from '@/utils'
 
+/**
+ * 复制指令
+ * // 没提供值，复制 textContent，这里复制 hello
+ * <div v-copy>hello</div>
+ * // 提供值，复制该值，复制 value 的值
+ * <div v-copy="value">hello</div>
+ */
 const copy: Directive = {
   mounted(el, binding: DirectiveBinding) {
     const { value = false } = binding
