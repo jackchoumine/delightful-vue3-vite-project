@@ -12,7 +12,7 @@ const directiveObj = {
   waterMaker,
 }
 
-export default function (app: App<Element>) {
+export default function (app: App<HTMLElement>) {
   Object.keys(directiveObj).forEach(key => {
     app.directive(key, directiveObj[key])
   })
