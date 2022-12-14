@@ -15,10 +15,11 @@ const Follower = useMouseFollower(() => ({ x: x.value, y: y.value }))
 
 <style scoped lang="css">
 .follower-content {
-  background: white;
-  color: black;
-  font-size: 14px;
+  background-color: antiquewhite;
   padding: 10px 12px;
+  border: 1px solid lightblue;
   border-radius: 6px;
+  font-size: 14px;
+  color: black;
 }
 </style>
