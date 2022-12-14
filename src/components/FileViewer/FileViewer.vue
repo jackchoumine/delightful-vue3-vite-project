@@ -8,7 +8,6 @@
 <template>
   <div :style="style">
     <h4>useStorage</h4>
-    <div>file viewer</div>
     <p>{{ jack?.name }}</p>
     <p>{{ person?.name }}</p>
     <button @click="remove">删除</button>
@@ -57,6 +56,12 @@ export default defineComponent({
     const { width, height } = useWindowResize()
     const [person, setItem] = useStorage('jack')
     setItem({ name: 'reactive session storage' })
+    setTimeout(() => {
+      setItem({ name: 'session storage' })
+    }, 2000)
+    watch(person, value => {
+      console.log(value)
+    })
     const hello = ref('hello')
     const title = computed(() => {
       return hello.value + Math.random() * 10
