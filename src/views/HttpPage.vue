@@ -1,0 +1,25 @@
+<!--
+ * @Description : 测试 http 
+ * @Date        : 2022-12-16 00:31:13 +0800
+ * @Author      : JackChou
+ * @LastEditTime: 2022-12-16 00:55:33 +0800
+ * @LastEditors : JackChou
+-->
+<script lang="ts" setup>
+import http from '@/http'
+
+const todo = shallowReactive({})
+
+onMounted(async () => {
+  const [, todoId120] = await http.get('https://jsonplaceholder.typicode.com/todos/120')
+  Object.assign(todo, todoId120)
+})
+</script>
+
+<template>
+  <div>
+    <p>{{ todo }}</p>
+  </div>
+</template>
+
+<style scoped lang="scss"></style>

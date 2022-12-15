@@ -17,6 +17,11 @@ export const routes = [
     component: () => import('../views/WCPage.vue'),
   },
   {
+    path: '/http-test',
+    name: 'http-test',
+    component: () => import('../views/HttpPage.vue'),
+  },
+  {
     path: '/ant',
     name: 'ant',
     component: () => import('../views/AntDesignPage.vue'),
