@@ -7,6 +7,11 @@
 -->
 <template>
   <div>
+    <h4>useVisibilityChange</h4>
+    <audio
+      ref="audio"
+      controls
+      src="https://mdn.github.io/webaudio-examples/audio-basics/outfoxing.mp3"></audio>
     <h3>组合函数例子</h3>
     <SimpleCounter />
     <h3>在条件语句下使用组合函数</h3>
@@ -51,12 +56,19 @@ import SimpleCounter from './SimpleCounter.vue'
 import ContactList from './ContactList.vue'
 import { Modal, ModalHeader } from './Modal'
 import useCart from './useCart'
+import { useVisibilityChange } from '@/hooks'
 const books = ref([
   { id: 1, name: 'vue', price: 12 },
   { id: 2, name: 'react', price: 20 },
   { id: 3, name: 'angular', price: 21 },
 ])
 const { items, addCart, removeCart } = useCart()
+const audio = ref(null)
+useVisibilityChange(hidden => {
+  if (hidden) {
+    audio.value?.pause()
+  }
+})
 </script>
 
 <style lang="scss"></style>
