@@ -4,7 +4,7 @@ import { useSearchContactList, Item } from './useSearchContact'
 type Props = {
   searchable?: boolean
 }
-const props = withDefaults(defineProps<Props>(), { searchable: false })
+const { searchable = false } = defineProps<Props>()
 
 const items = [
   {
@@ -27,7 +27,7 @@ const items = [
 let result = ref<Item[]>(items)
 const filterKey = ref('')
 
-if (props.searchable) {
+if (searchable) {
   const searchableProps = ['name', 'phone']
   result = useSearchContactList({ items, filterKey, searchableProps })
 }

@@ -15,13 +15,14 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 // import basicSsl from '@vitejs/plugin-basic-ssl'
-import fs from 'fs'
+// import fs from 'fs'
 const isCustomElement = tag => /^([a-z][a-z0-9]*)(-[a-z0-9]+)*$/.test(tag)
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
+      reactivityTransform: true,
       template: {
         transformAssetUrls,
         compilerOptions: {
