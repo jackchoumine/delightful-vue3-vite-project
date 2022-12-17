@@ -5,30 +5,55 @@
  * @LastEditTime: 2022-12-16 00:52:47 +0800
  * @LastEditors : JackChou
  */
+import type { AxiosRequestConfig, AxiosInstance, AxiosError, AxiosResponse } from 'axios'
 import axios from 'axios'
 
-const defaultConfig = {
+import {
+  handleChangeRequestHeader,
+  handleConfigureAuth,
+  handleAuthError,
+  handleGeneralError,
+  handleNetworkError,
+} from './tools'
+
+const defaultConfig: AxiosRequestConfig = {
   // timeout: 1000 * 4,
   withCredentials: true,
-  headers: {
-    'content-type': 'application/json;charset=UTF-8',
-  },
+  // headers: {
+  //   'content-type': 'application/json;charset=UTF-8',
+  // },
 }
 
-const http = axios.create(defaultConfig)
+const http: AxiosInstance = axios.create(defaultConfig)
 
-http.interceptors.response.use(res => {
-  if (res.status < 299 && res.status >= 200) return Promise.resolve(res.data)
+http.interceptors.request.use(config => {
+  config = handleChangeRequestHeader(config)
+  config = handleConfigureAuth(config)
+  return config
 })
 
-function get(url: string, params: Record<string, unknown>) {
+http.interceptors.response.use(
+  res => {
+    if (res.status <= 299 && res.status >= 200) return Promise.resolve(res.data)
+    handleAuthError(res.data.errno)
+    handleGeneralError(res.data.errno, res.data.errMsg)
+    return Promise.resolve(res)
+  },
+  err => {
+    handleNetworkError(err.res.status)
+    return Promise.reject(err.res)
+  },
+)
+
+function get<R = any>(url: string, params?: Record<string, unknown>) {
   return http
-    .get(url, params)
+    .get<R>(url, { params })
     .then(data => {
-      return Promise.resolve([null, data])
+      // TODO 可以直接声明一个 PromiseResolve 类型吗？
+      return Promise.resolve([null, data as unknown as R] as [null, R])
     })
-    .catch(err => {
-      return Promise.resolve([err, null])
+    .catch((err: AxiosError) => {
+      return Promise.resolve([err, null] as [AxiosError, null])
     })
 }
 

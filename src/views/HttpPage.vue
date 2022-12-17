@@ -10,9 +10,18 @@ import http from '@/http'
 
 const todo = shallowReactive({})
 
+type Todo = {
+  userId: string
+  id: number
+  title: string
+  completed: boolean
+}
 onMounted(async () => {
-  const [, todoId120] = await http.get('https://jsonplaceholder.typicode.com/todos/120')
-  Object.assign(todo, todoId120)
+  const [error, todoId120] = await http.get<Todo>(
+    'https://jsonplaceholder.typicode.com/todos/120',
+    { name: 'to' },
+  )
+  !error && Object.assign(todo, todoId120)
 })
 </script>
 

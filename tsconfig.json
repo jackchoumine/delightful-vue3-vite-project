@@ -8,6 +8,7 @@
     "strict": false,
     "jsx": "preserve",
     "sourceMap": true,
+    // "strictNullChecks": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
