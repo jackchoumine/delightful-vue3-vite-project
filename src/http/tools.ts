@@ -1,3 +1,4 @@
+import type { AxiosError, AxiosResponse, HttpStatusCode } from 'axios'
 import { ElMessage as Message } from 'element-plus'
 
 export const handleChangeRequestHeader = config => {
@@ -11,12 +12,12 @@ export const handleConfigureAuth = config => {
   return config
 }
 
-export const handleNetworkError = (errStatus?: number): void => {
-  const networkErrMap: any = {
+export const handleNetworkError = (res: AxiosResponse): void => {
+  const codeMap: Record<string, string> = {
     '400': '错误的请求', // token 失效
     '401': '未授权，请重新登录',
     '403': '拒绝访问',
-    '404': '请求错误，未找到该资源',
+    '404': '请求路径不存在，请检查',
     '405': '请求方法未允许',
     '408': '请求超时',
     '500': '服务器端出错',
@@ -26,8 +27,9 @@ export const handleNetworkError = (errStatus?: number): void => {
     '504': '网络超时',
     '505': 'http版本不支持该请求',
   }
-  if (errStatus) {
-    Message.error(networkErrMap[errStatus] ?? `其他连接错误 --${errStatus}`)
+  logInfo(res)
+  if (res.status) {
+    Message.error(codeMap[res.status] ?? `其他连接错误 --${res.status}`)
     return
   }
 
@@ -63,4 +65,43 @@ export const handleGeneralError = (errno: string, errMsg: string): boolean => {
     return false
   }
   return true
+}
+
+/**
+ * 柯里化
+ * @param {Fn} fn 需要柯里化的函数
+ * @returns Fn
+ */
+export const curry = fn => {
+  if (typeof fn !== 'function') {
+    throw new Error('no function provided!')
+  }
+  // 因为要递归，使用箭头函数会不方便
+  return function curriedFn(...args) {
+    // 递归出口放在前面，更加好理解
+    if (args.length === fn.length) {
+      return fn(...args)
+    }
+    // 箭头函数没有 arguments 需要显示给出参数
+    return (...params) => {
+      return curriedFn(...args.concat(params))
+    }
+  }
+}
+
+const log = (size, color, info) => {
+  console.log(`%c${info}`, `color:${color};font-size:${size}px`)
+}
+export const blueLog = curry(log)(20)('#44cef6')
+export const redLog = curry(log)(20)('red')
+export const blackLog = curry(log)(18)('#161823')
+
+export function logInfo({ status, statusText, config }) {
+  redLog(`${status}，${statusText}`)
+  blackLog(`url：`)
+  blueLog(config.url)
+  blackLog('请求参数 params：')
+  blueLog(JSON.stringify(config.params))
+  blackLog('请求body data：')
+  blueLog(JSON.stringify(config.data))
 }

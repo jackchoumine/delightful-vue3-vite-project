@@ -40,8 +40,8 @@ http.interceptors.response.use(
     return Promise.resolve(res)
   },
   err => {
-    handleNetworkError(err.res.status)
-    return Promise.reject(err.res)
+    handleNetworkError(err.response)
+    return Promise.reject(err.response)
   },
 )
 
