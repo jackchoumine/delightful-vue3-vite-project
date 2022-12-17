@@ -83,3 +83,14 @@ export default defineComponent({
   },
 })
 ```
+
+`script setup`语法：
+
+```ts
+// const emits = defineEmits(['site-change', 'date-change', 'page-change', 'area-change'])
+type Emit = {
+  //NOTE  e 的值和 emit('eventName') 中的 eventName 要相同
+  (e: 'site-change', sites: Option[]): void
+  (e: 'dateChange', date: string | unknown[]): void
+}
+```
