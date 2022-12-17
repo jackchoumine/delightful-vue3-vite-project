@@ -3,7 +3,7 @@ import { Button, UseButton } from '../components'
 </script>
 
 <template>
-  <div class="page-component">
+  <div class="page">
     <h2>测试jsx 中使用插槽</h2>
     <Button>
       <template #left>

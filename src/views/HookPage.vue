@@ -4,7 +4,7 @@ const myInput = ref('hello')
 </script>
 
 <template>
-  <div class="page-component">
+  <div class="page">
     <HookDemo />
     <MyInput v-model="myInput" />
     <p>{{ myInput }}</p>

@@ -3,7 +3,7 @@ import { AntDesignDemos } from '../components'
 </script>
 
 <template>
-  <div class="page-component">
+  <div class="page">
     <AntDesignDemos />
   </div>
 </template>

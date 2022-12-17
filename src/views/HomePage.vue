@@ -25,7 +25,7 @@ const user = inject(USER_KEY)
 </script>
 
 <template>
-  <div class="page-component" v-water-maker="{ text: '水印' }">
+  <div class="page" v-water-maker="{ text: '水印' }">
     <h3>provide inject</h3>
     <p>userName:{{ user?.name }}</p>
     <hr />

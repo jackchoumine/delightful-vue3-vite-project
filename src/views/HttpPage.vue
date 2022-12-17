@@ -26,7 +26,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
+  <div class="page">
     <p>{{ todo }}</p>
   </div>
 </template>

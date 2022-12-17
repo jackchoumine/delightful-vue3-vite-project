@@ -47,10 +47,10 @@ http.interceptors.response.use(
 
 function get<R = any>(url: string, params?: Record<string, unknown>) {
   return http
-    .get<R>(url, { params })
+    .get<void, R>(url, { params })
     .then(data => {
-      // TODO 可以直接声明一个 PromiseResolve 类型吗？
-      return Promise.resolve([null, data as unknown as R] as [null, R])
+      // TODO 可以直接返回一个 PromiseResolve 类型吗？
+      return Promise.resolve([null, data] as [null, R])
     })
     .catch((err: AxiosError) => {
       return Promise.resolve([err, null] as [AxiosError, null])

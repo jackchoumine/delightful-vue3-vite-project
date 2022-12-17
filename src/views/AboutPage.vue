@@ -6,7 +6,7 @@
  * @Description : 关于页面
 -->
 <template>
-  <div class="page-component">init</div>
+  <div class="page">init</div>
 </template>
 
 <script setup lang="ts"></script>

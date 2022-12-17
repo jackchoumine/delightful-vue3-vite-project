@@ -3,7 +3,7 @@ import { TestStencilWC, TestHaunted, TestLit } from '../components'
 </script>
 
 <template>
-  <div class="page-component">
+  <div class="page">
     <TestHaunted />
     <hr />
     <TestStencilWC />
