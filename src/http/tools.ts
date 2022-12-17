@@ -98,8 +98,8 @@ export const blackLog = curry(log)(18)('#161823')
 
 export function logInfo({ status, statusText, config }) {
   redLog(`${status}，${statusText}`)
-  blackLog(`url：`)
-  blueLog(config.url)
+  // blackLog(`method：${config.method}`)
+  blueLog(`${config.method}：${config.url}`)
   blackLog('请求参数 params：')
   blueLog(JSON.stringify(config.params))
   blackLog('请求body data：')

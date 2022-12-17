@@ -18,7 +18,7 @@ type Todo = {
 }
 onMounted(async () => {
   const [error, todoId120] = await http.get<Todo>(
-    'https://jsonplaceholder.typicode.com/todoTs/120',
+    'https://jsonplaceholder.typicode.com/todos/120',
     { name: 'to' },
   )
   !error && Object.assign(todo, todoId120)
